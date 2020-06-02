@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import {keys} from 'idb-keyval';
 
 import Contact from '../../components/contact';
@@ -37,7 +38,9 @@ class Contacts extends Component {
                 <br /> <br />
 
                 <div className='row add-contact'>
-                    <div className='col-12'><button>Add Contact</button></div>
+                    <div className='col-12'>
+                        <Link to='/addfriend'><button>Add Friend</button></Link>
+                    </div>
                 </div>
             </div>
         )

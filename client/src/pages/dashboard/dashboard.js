@@ -9,7 +9,7 @@ class Dashboard extends Component {
         return(
             <div className='dash-buttons'>
                 <Link to='/contacts'><button>View Friends</button></Link><br />
-                <button>Add A Friend</button>
+                <Link to='/addfriend'><button>Add A Friend</button></Link>
             </div>
         )
     } 
