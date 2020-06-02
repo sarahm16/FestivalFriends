@@ -5,10 +5,6 @@ import { keys } from 'idb-keyval';
 
 class Dashboard extends Component {
 
-    componentDidMount() {
-        keys().then(keys => console.log(keys));
-    }
-
     render() {
         return(
             <div className='dash-buttons'>

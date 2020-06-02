@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
+import {keys} from 'idb-keyval';
+
 import Contact from '../../components/contact';
 
 import './style.css';
 
 class Contacts extends Component {
 
-    //render new contact 
+    componentDidMount() {
+        keys().then(keys => console.log(keys));
+    }
+
+    //render new contact for each key from database
 
     render() {
         return(
