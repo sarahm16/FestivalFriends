@@ -31,7 +31,6 @@ class Contact extends Component {
 
     toggle = () => {
         this.setState({show: !this.state.show})
-        console.log(this.state.show)
     }
 
     render() {
@@ -40,13 +39,13 @@ class Contact extends Component {
             //     <div className='col-6'>{props.name}</div>
             //     <div className='col-6'><button>Delete</button></div>
             // </div>
-            <div id="accordion">
+            <div>
                 <div className="card">
                     <div className="card-header" id="headingOne">
                         <div className='row'>
                             <div className="col-6 text-left">
-                                <button onClick={this.toggle} className="btn btn-link" data-toggle="collapse" data-target='#collapseOne' aria-expanded="true" aria-controls="collapseOne">
-                                {this.state.name}
+                                <button onClick={this.toggle} className="btn btn-link" aria-expanded="true" >
+                                    {this.state.name}
                                 </button>
                             </div>
                             <div className='col-6 text-right'>
@@ -59,7 +58,7 @@ class Contact extends Component {
 
                    
 
-                    {this.state.show && <div id='collapseOne' className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">
                             Festival: {this.state.festival} <br />
                             Phone: {this.state.phone} <br />
