@@ -44,17 +44,17 @@ class Contact extends Component {
                 <div className="card">
                     <div className="card-header" id="headingOne">
                         <div className='row'>
-                        <div className="col-6 text-left">
-                            <button onClick={this.toggle} className="btn btn-link" data-toggle="collapse" data-target='#collapseOne' aria-expanded="true" aria-controls="collapseOne">
-                            {this.state.name}
-                            </button>
-                        </div>
-                        <div className='col-6 text-right'>
-                            <button onClick={this.onClick}>
-                                Delete
-                                {/* <i className="fas fa-trash-alt"></i> */}
-                            </button>
-                        </div>
+                            <div className="col-6 text-left">
+                                <button onClick={this.toggle} className="btn btn-link" data-toggle="collapse" data-target='#collapseOne' aria-expanded="true" aria-controls="collapseOne">
+                                {this.state.name}
+                                </button>
+                            </div>
+                            <div className='col-6 text-right'>
+                                <button onClick={this.onClick}>
+                                    Delete
+                                    {/* <i className="fas fa-trash-alt"></i> */}
+                                </button>
+                            </div>
                         </div>
                     </div>
 

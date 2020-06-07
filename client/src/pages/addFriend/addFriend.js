@@ -36,30 +36,31 @@ class AddFriend extends Component {
     render() {
         return(
             <div>
-                
-            <Navbar currentPage='addFriend' />
-            <form>
-                <div className="form-group">
-                    {/* <label for="name">Name</label> */}
-                    <input type="text" className="form-control" id="name" placeholder="Name" onChange={this.onChange} value={this.state.name}/>
-                </div>
-                <div className='form-row'>
-                    <div className='form-group col-6'>
-                        <input type="text" className="form-control" id="phone" placeholder="Phone Number" onChange={this.onChange} value={this.state.phone}/>
+                <Navbar currentPage='addFriend' />
+
+            
+                <form>
+                    <div className="form-group">
+                        {/* <label for="name">Name</label> */}
+                        <input type="text" className="form-control" id="name" placeholder="Name" onChange={this.onChange} value={this.state.name}/>
                     </div>
-                    <div className='form-group col-6'>
-                        <input type="text" className="form-control" id="date" placeholder="Date" onChange={this.onChange} value={this.state.date}/>
+                    <div className='form-row'>
+                        <div className='form-group col-6'>
+                            <input type="text" className="form-control" id="phone" placeholder="Phone Number" onChange={this.onChange} value={this.state.phone}/>
+                        </div>
+                        <div className='form-group col-6'>
+                            <input type="text" className="form-control" id="date" placeholder="Date" onChange={this.onChange} value={this.state.date}/>
+                        </div>
                     </div>
-                </div>
-                <div className="form-group">
-                    {/* <label for="festival">Festival you met at:</label> */}
-                    <input type="text" className="form-control" id="festival" placeholder="Festival" onChange={this.onChange} value={this.state.festival}/>
-                </div>
-                
-                <textarea className='notes' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>
-                <br />
-                <button type='submit' onClick={this.handleSubmit}>Add</button>
-            </form>
+                    <div className="form-group">
+                        {/* <label for="festival">Festival you met at:</label> */}
+                        <input type="text" className="form-control" id="festival" placeholder="Festival" onChange={this.onChange} value={this.state.festival}/>
+                    </div>
+                    
+                    <textarea className='notes' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>
+                    <br />
+                    <button type='submit' onClick={this.handleSubmit}>Add</button>
+                </form>
             </div>
         )
     }
