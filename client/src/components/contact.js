@@ -9,11 +9,19 @@ function Contact(props) {
         <div id="accordion">
             <div className="card">
                 <div className="card-header" id="headingOne">
-                    <h5 className="mb-0">
+                    <div className='row'>
+                    <div className="col-6 text-left">
                         <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         {props.name}
                         </button>
-                    </h5>
+                    </div>
+                    <div className='col-6 text-right'>
+                        <button>
+                            Delete
+                            {/* <i className="fas fa-trash-alt"></i> */}
+                        </button>
+                    </div>
+                    </div>
                 </div>
 
                 <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">

@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import { set } from 'idb-keyval';
 
 import './style.css';
+import Navbar from '../../components/navbar';
 
 class AddFriend extends Component {
 
@@ -33,6 +34,9 @@ class AddFriend extends Component {
 
     render() {
         return(
+            <div>
+                
+            <Navbar currentPage='addFriend' />
             <form>
                 <div className="form-group">
                     {/* <label for="name">Name</label> */}
@@ -55,6 +59,7 @@ class AddFriend extends Component {
                 <br />
                 <button type='submit' onClick={this.handleSubmit}>Add</button>
             </form>
+            </div>
         )
     }
 }
