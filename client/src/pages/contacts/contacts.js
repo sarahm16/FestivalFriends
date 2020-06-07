@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 import {keys, get} from 'idb-keyval';
 
 import Contact from '../../components/contact';
@@ -38,15 +37,7 @@ class Contacts extends Component {
                 <div className='container'>
                     {this.state.contacts.map(contact => {
                         return <Contact name={contact} />
-                    })}
-
-                    <br /> <br />
-
-                    <div className='row add-contact'>
-                        <div className='col-12'>
-                            <Link to='/addfriend'><button>Add Friend</button></Link>
-                        </div>
-                    </div>
+                    })} 
                 </div>
             </div>
         )
