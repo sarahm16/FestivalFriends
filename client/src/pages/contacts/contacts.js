@@ -6,11 +6,6 @@ import Navbar from '../../components/navbar';
 
 import './style.css';
 
-async function getFriend(contact) {
-    const friend = await get(contact)
-    return friend;
-}
-
 class Contacts extends Component {
 
     constructor() {
@@ -22,9 +17,10 @@ class Contacts extends Component {
 
     componentDidMount() {
         keys().then(keys => {
-            console.log(keys)
-            this.setState({contacts: keys})
-        });
+            this.setState({
+                contacts: keys
+            })
+        })
     }
 
     //render new contact for each key from database
@@ -36,7 +32,7 @@ class Contacts extends Component {
                 <Navbar currentPage='contacts' />
                 <div className='container'>
                     {this.state.contacts.map(contact => {
-                        return <Contact name={contact} />
+                        return <Contact id={contact} />
                     })} 
                 </div>
             </div>

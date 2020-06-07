@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { get } from 'idb-keyval';
+import { get, del } from 'idb-keyval';
 
 class Contact extends Component {
     constructor() {
@@ -14,8 +14,9 @@ class Contact extends Component {
     }
 
     componentDidMount() {
-        get(this.props.name).then(res => {
+        get(this.props.id).then(res => {
             this.setState({
+                name: res.name,
                 festival: res.festival,
                 phone: res.phone,
                 notes: res.notes
@@ -24,7 +25,10 @@ class Contact extends Component {
     }
 
     onClick = () => {
-        console.log('pressed delete button')
+        get(this.props.id).then(res => {
+            console.log(res)
+        })
+        del(this.props.id)
     }
 
     render() {
@@ -39,7 +43,7 @@ class Contact extends Component {
                         <div className='row'>
                         <div className="col-6 text-left">
                             <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            {this.props.name}
+                            {this.state.name}
                             </button>
                         </div>
                         <div className='col-6 text-right'>

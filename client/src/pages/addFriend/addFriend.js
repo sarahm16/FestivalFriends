@@ -26,9 +26,10 @@ class AddFriend extends Component {
     handleSubmit = () => {
         console.log('added a friend')
         //generate random id
+        let id = Math.floor(Math.random() * 1000000000)
         //create contact from form
         let contact = this.state
-        set(this.state.name, contact)
+        set(id, contact)
         //set random id to contact in idb keyvalue database
     }
 
