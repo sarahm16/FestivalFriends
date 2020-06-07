@@ -6,10 +6,11 @@ class Contact extends Component {
     constructor() {
         super();
         this.state={
+            name: '',
             festival: '',
             phone: '',
             notes: '',
-            id: ''
+            show: false
         }
     }
 
@@ -25,10 +26,12 @@ class Contact extends Component {
     }
 
     onClick = () => {
-        get(this.props.id).then(res => {
-            console.log(res)
-        })
         del(this.props.id)
+    }
+
+    toggle = () => {
+        this.setState({show: !this.state.show})
+        console.log(this.state.show)
     }
 
     render() {
@@ -42,12 +45,12 @@ class Contact extends Component {
                     <div className="card-header" id="headingOne">
                         <div className='row'>
                         <div className="col-6 text-left">
-                            <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button onClick={this.toggle} className="btn btn-link" data-toggle="collapse" data-target='#collapseOne' aria-expanded="true" aria-controls="collapseOne">
                             {this.state.name}
                             </button>
                         </div>
                         <div className='col-6 text-right'>
-                            <button id={this.state.id} onClick={this.onClick}>
+                            <button onClick={this.onClick}>
                                 Delete
                                 {/* <i className="fas fa-trash-alt"></i> */}
                             </button>
@@ -55,13 +58,13 @@ class Contact extends Component {
                         </div>
                     </div>
 
-                    <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    {this.state.show && <div id='collapseOne' className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div className="card-body">
                             Festival: {this.state.festival} <br />
                             Phone: {this.state.phone} <br />
                             Notes: {this.state.notes}
                         </div>
-                    </div>
+                    </div>}
                 </div>
             </div>
         )
