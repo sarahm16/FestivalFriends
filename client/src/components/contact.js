@@ -26,7 +26,8 @@ class Contact extends Component {
     }
 
     onClick = () => {
-        del(this.props.id)
+        del(this.props.id);
+        window.location.reload();
     }
 
     toggle = () => {
