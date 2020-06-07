@@ -50,13 +50,14 @@ class Contact extends Component {
                                 </button>
                             </div>
                             <div className='col-6 text-right'>
-                                <button onClick={this.onClick}>
-                                    Delete
-                                    {/* <i className="fas fa-trash-alt"></i> */}
+                                <button onClick={this.onClick} className='delete'>
+                                    <i className="fas fa-trash-alt delete-icon"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
+
+                   
 
                     {this.state.show && <div id='collapseOne' className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div className="card-body">

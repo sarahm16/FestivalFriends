@@ -13,11 +13,13 @@ class Contacts extends Component {
         this.state = {
             contacts: [],
             show: false,
-            name: '',
-            phone: '',
-            festival: '',
-            date: '',
-            notes: ''
+            contact: {
+                name: '',
+                phone: '',
+                festival: '',
+                date: '',
+                notes: ''
+            }
         }
     }
 
@@ -43,7 +45,7 @@ class Contacts extends Component {
         //generate random id
         let id = Math.floor(Math.random() * 1000000000)
         //create contact from form
-        let contact = this.state
+        let contact = this.state.contact
         set(id, contact)
         //set random id to contact in idb keyvalue database
     }
@@ -60,9 +62,9 @@ class Contacts extends Component {
                     <div className="card">
                         <div className="card-header" id="headingOne">
                             <div className='row'>
-                                <div className="col-6 text-left">
+                                <div className="col-12 text-left">
                                     <button onClick={this.toggle} className="btn btn-link" data-toggle="collapse" data-target='#collapseOne' aria-expanded="true" aria-controls="collapseOne">
-                                    Add Friend
+                                    <i class="fas fa-plus-circle add-icon"></i> Add Friend
                                     </button>
                                 </div>
                             </div>
@@ -73,19 +75,19 @@ class Contacts extends Component {
                             <form>
                                 <div className="form-group">
                                     {/* <label for="name">Name</label> */}
-                                    <input type="text" className="form-control" id="name" placeholder="Name" onChange={this.onChange} value={this.state.name}/>
+                                    <input type="text" className="form-control" id="contact.name" placeholder="Name" onChange={this.onChange} value={this.state.name}/>
                                 </div>
                                 <div className='form-row'>
                                     <div className='form-group col-6'>
-                                        <input type="text" className="form-control" id="phone" placeholder="Phone Number" onChange={this.onChange} value={this.state.phone}/>
+                                        <input type="text" className="form-control" id="contact.phone" placeholder="Phone Number" onChange={this.onChange} value={this.state.phone}/>
                                     </div>
                                     <div className='form-group col-6'>
-                                        <input type="text" className="form-control" id="date" placeholder="Date" onChange={this.onChange} value={this.state.date}/>
+                                        <input type="text" className="form-control" id="contact.date" placeholder="Date" onChange={this.onChange} value={this.state.date}/>
                                     </div>
                                 </div>
                                 <div className="form-group">
                                     {/* <label for="festival">Festival you met at:</label> */}
-                                    <input type="text" className="form-control" id="festival" placeholder="Festival" onChange={this.onChange} value={this.state.festival}/>
+                                    <input type="text" className="form-control" id="contact.festival" placeholder="Festival" onChange={this.onChange} value={this.state.festival}/>
                                 </div>
                             
                                 <textarea className='notes' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>

@@ -1,3 +1,12 @@
 .navbar {
     margin-bottom: 10px;
+    width: 100%;
+}
+
+.delete {
+    border: none;
+}
+
+.delete-icon {
+    color: red;
 }
