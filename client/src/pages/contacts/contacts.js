@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import {keys} from 'idb-keyval';
+import {keys, get} from 'idb-keyval';
 
 import Contact from '../../components/contact';
 import Navbar from '../../components/navbar';
 
 import './style.css';
+
+async function getFriend(contact) {
+    const friend = await get(contact)
+    return friend;
+}
 
 class Contacts extends Component {
 
@@ -34,9 +39,6 @@ class Contacts extends Component {
                     {this.state.contacts.map(contact => {
                         return <Contact name={contact} />
                     })}
-                    <Contact name='Sarah'/>
-                    <Contact name='Jonathon' />
-                    <Contact name='Ben' />
 
                     <br /> <br />
 
