@@ -15,13 +15,22 @@ function Navbar(props) {
                     View Friends
                     </a>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <a
                     href="/addfriend"
                     //   onClick={() => props.handlePageChange("Home")}
                     className={props.currentPage === "addFriend" ? "nav-link active" : "nav-link"}
                     >
                         Add Friend
+                    </a>
+                </li> */}
+                <li className="nav-item">
+                    <a
+                    href="/search"
+                    //   onClick={() => props.handlePageChange("Home")}
+                    className={props.currentPage === "search" ? "nav-link active" : "nav-link"}
+                    >
+                        Search
                     </a>
                 </li>
             </ul>
