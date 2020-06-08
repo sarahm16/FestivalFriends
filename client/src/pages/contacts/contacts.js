@@ -26,6 +26,7 @@ class Contacts extends Component {
     componentDidMount() {
         keys().then(keys => {
             let sortedKeys = keys.sort();
+            console.log('sorted keys: '+ sortedKeys)
             this.setState({
                 contacts: sortedKeys
             })

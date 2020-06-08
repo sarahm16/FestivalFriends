@@ -14,35 +14,47 @@ class AddFriend extends Component {
             phone: '',
             festival: '',
             date: '',
-            notes: ''
+            notes: '',
+            invalidName: false,
+            isSubmitted: false
         }
     }
 
     onChange = (event) => {
         console.log(event.target.value)
-        this.setState({ [event.target.id]: event.target.value})
+        this.setState({
+            [event.target.id]: event.target.value,
+            invalidName: false
+        })
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
-        console.log('added a friend')
-        //generate random id
-        let id = Math.floor(Math.random() * 1000000000)
-        //create contact from form
-        let contact = this.state
+        event.preventDefault();
 
-        //set first letter of name to first letter of id, for alphabetizing purposes
-        id = contact.name[0] + id
+        if(this.state.name==='') {
+            this.setState({
+                invalidName: true
+            })
+        } else {           
+            //generate random id
+            let id = Math.floor(Math.random() * 1000000000)
+            //create contact from form
+            let contact = this.state
 
-        //set random id to contact in idb keyvalue database
-        set(id, contact)      
+            //set first letter of name to first letter of id, for alphabetizing purposes
+            id = contact.name[0].toLowerCase() + id
+
+            //set random id to contact in idb keyvalue database
+            set(id, contact)
+
+            this.setState({isSubmitted: true})
+        }    
     }
 
     render() {
         return(
             <div>
                 <Navbar currentPage='addFriend' />
-
             
                 <form>
                     <div className="form-group">
@@ -66,6 +78,12 @@ class AddFriend extends Component {
                     <br />
                     <button type='submit' onClick={event => this.handleSubmit(event)}>Add</button>
                 </form>
+                {this.state.invalidName && <div className="alert alert-danger" role="alert">
+                    Please enter a name!
+                </div>}
+                {this.state.isSubmitted && <div className="alert alert-success" role="alert">
+                    Friend has been added!
+                </div>}
             </div>
         )
     }

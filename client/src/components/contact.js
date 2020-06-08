@@ -44,12 +44,12 @@ class Contact extends Component {
                 <div className="card">
                     <div className="card-header" id="headingOne">
                         <div className='row'>
-                            <div className="col-6 text-left">
+                            <div className="col-10 text-left">
                                 <button onClick={this.toggle} className="btn btn-link" aria-expanded="true" >
                                     {this.state.name}
                                 </button>
                             </div>
-                            <div className='col-6 text-right'>
+                            <div className='col-2 text-right'>
                                 <button onClick={this.onClick} className='delete'>
                                     <i className="fas fa-trash-alt delete-icon"></i>
                                 </button>
