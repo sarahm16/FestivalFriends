@@ -17,7 +17,9 @@ class Contacts extends Component {
             phone: '',
             festival: '',
             date: '',
-            notes: ''
+            notes: '',
+            invalidName: false,
+            isSubmitted: false
         }
     }
 
@@ -35,28 +37,39 @@ class Contacts extends Component {
     }
 
     onChange = (event) => {
-        console.log(event.target.value)
-        this.setState({ [event.target.id]: event.target.value})
+        this.setState({
+            [event.target.id]: event.target.value,
+            invalidName: false
+        })
     }
 
-    handleSubmit = () => {
-        //generate random id
-        let id = Math.floor(Math.random() * 1000000000)
-        //create contact from form
-        console.log('this.state.contact: ' + this.state.contact)
-        
-        let contact = {
-            name: this.state.name,
-            phone: this.state.phone,
-            festival: this.state.festival,
-            date: this.state.date,
-            notes: this.state.notes
-        }
+    handleSubmit = (event) => {
+        event.preventDefault()
 
-        //set first letter of name to first letter of id
-        //set random id to contact in idb keyvalue database
-        id = contact.name[0].toLowerCase() + id
-        set(id, contact)
+        if(this.state.name==='') {
+            this.setState({
+                invalidName: true
+            })
+        } else { 
+            //generate random id
+            let id = Math.floor(Math.random() * 1000000000)
+            //create contact from form
+            console.log('this.state.contact: ' + this.state.contact)
+            
+            let contact = {
+                name: this.state.name,
+                phone: this.state.phone,
+                festival: this.state.festival,
+                date: this.state.date,
+                notes: this.state.notes
+            }
+
+            //set first letter of name to first letter of id
+            //set random id to contact in idb keyvalue database
+            id = contact.name[0].toLowerCase() + id;
+            set(id, contact);
+            this.setState({isSubmitted: true})
+        }
     }
 
     //render new contact for each key from database
@@ -102,12 +115,21 @@ class Contacts extends Component {
                                 <br />
                                 <button type='submit' onClick={this.handleSubmit}>Add</button>
                             </form>
-                        </div></div>}
+                            {this.state.invalidName && <div className="alert alert-danger" role="alert">
+                                Please enter a name!
+                            </div>}
+                            {this.state.isSubmitted && <div className="alert alert-success" role="alert">
+                                Friend has been added!
+                            </div>}
+                        </div>
+                        </div>}
                     </div>
 
                     {this.state.contacts.map(contact => {
                         return <Contact id={contact} />
                     })} 
+
+                    
                 </div>
             </div>
         )
