@@ -23,14 +23,19 @@ class AddFriend extends Component {
         this.setState({ [event.target.id]: event.target.value})
     }
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault()
         console.log('added a friend')
         //generate random id
         let id = Math.floor(Math.random() * 1000000000)
         //create contact from form
         let contact = this.state
-        set(id, contact)
+
+        //set first letter of name to first letter of id, for alphabetizing purposes
+        id = contact.name[0] + id
+
         //set random id to contact in idb keyvalue database
+        set(id, contact)      
     }
 
     render() {
@@ -59,7 +64,7 @@ class AddFriend extends Component {
                     
                     <textarea className='notes' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>
                     <br />
-                    <button type='submit' onClick={this.handleSubmit}>Add</button>
+                    <button type='submit' onClick={event => this.handleSubmit(event)}>Add</button>
                 </form>
             </div>
         )

@@ -25,8 +25,9 @@ class Contacts extends Component {
 
     componentDidMount() {
         keys().then(keys => {
+            let sortedKeys = keys.sort();
             this.setState({
-                contacts: keys
+                contacts: sortedKeys
             })
         })
     }
@@ -45,7 +46,7 @@ class Contacts extends Component {
         //generate random id
         let id = Math.floor(Math.random() * 1000000000)
         //create contact from form
-        console.log(this.state.contact[0])
+        console.log(this.state.contact)
         let contact = this.state.contact
         set(id, contact)
         //set random id to contact in idb keyvalue database
