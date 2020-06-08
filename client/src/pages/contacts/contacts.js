@@ -13,20 +13,17 @@ class Contacts extends Component {
         this.state = {
             contacts: [],
             show: false,
-            contact: {
-                name: '',
-                phone: '',
-                festival: '',
-                date: '',
-                notes: ''
-            }
+            name: '',
+            phone: '',
+            festival: '',
+            date: '',
+            notes: ''
         }
     }
 
     componentDidMount() {
         keys().then(keys => {
             let sortedKeys = keys.sort();
-            console.log('sorted keys: '+ sortedKeys)
             this.setState({
                 contacts: sortedKeys
             })
@@ -43,18 +40,26 @@ class Contacts extends Component {
     }
 
     handleSubmit = () => {
-        console.log('added a friend')
         //generate random id
         let id = Math.floor(Math.random() * 1000000000)
         //create contact from form
-        console.log(this.state.contact)
-        let contact = this.state.contact
-        set(id, contact)
+        console.log('this.state.contact: ' + this.state.contact)
+        
+        let contact = {
+            name: this.state.name,
+            phone: this.state.phone,
+            festival: this.state.festival,
+            date: this.state.date,
+            notes: this.state.notes
+        }
+
+        //set first letter of name to first letter of id
         //set random id to contact in idb keyvalue database
+        id = contact.name[0].toLowerCase() + id
+        set(id, contact)
     }
 
     //render new contact for each key from database
-
     render() {
         console.log('this.state.contacts: ' + this.state.contacts);
         return(
