@@ -3,6 +3,7 @@ import {keys, set} from 'idb-keyval';
 
 import Contact from '../../components/contact';
 import Navbar from '../../components/navbar';
+import Input from '../../components/input';
 
 import './style.css';
 
@@ -83,8 +84,8 @@ class Contacts extends Component {
                     <div className="card">
                         <div className="card-header" id="headingOne">
                             <div className='row'>
-                                <div className="col-12 text-left">
-                                    <button onClick={this.toggle} className="btn btn-link" data-toggle="collapse" data-target='#collapseOne' aria-expanded="true" aria-controls="collapseOne">
+                                <div className="col-12">
+                                    <button onClick={this.toggle} className="btn btn-link add-contact" data-toggle="collapse" data-target='#collapseOne' aria-expanded="true" aria-controls="collapseOne">
                                     <i className="fas fa-plus-circle add-icon"></i> Add Friend
                                     </button>
                                 </div>
@@ -115,6 +116,7 @@ class Contacts extends Component {
                                 <br />
                                 <button type='submit' onClick={this.handleSubmit}>Add</button>
                             </form>
+                            <Input />
                             {this.state.invalidName && <div className="alert alert-danger" role="alert">
                                 Please enter a name!
                             </div>}
