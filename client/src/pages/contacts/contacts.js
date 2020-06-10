@@ -20,7 +20,8 @@ class Contacts extends Component {
             date: '',
             notes: '',
             invalidName: false,
-            isSubmitted: false
+            isSubmitted: false,
+            contactID: ''
         }
     }
 
@@ -54,9 +55,7 @@ class Contacts extends Component {
         } else { 
             //generate random id
             let id = Math.floor(Math.random() * 1000000000)
-            //create contact from form
-            console.log('this.state.contact: ' + this.state.contact)
-            
+            //create contact from form            
             let contact = {
                 name: this.state.name,
                 phone: this.state.phone,
@@ -68,6 +67,7 @@ class Contacts extends Component {
             //set first letter of name to first letter of id
             //set random id to contact in idb keyvalue database
             id = contact.name[0].toLowerCase() + id;
+            this.setState({contactID: id})
             set(id, contact);
             this.setState({isSubmitted: true})
         }
@@ -75,11 +75,9 @@ class Contacts extends Component {
 
     //render new contact for each key from database
     render() {
-        console.log('this.state.contacts: ' + this.state.contacts);
         return(
             <div>
                 <Navbar currentPage='contacts' />
-                
                 <div className='container'>
                     <div className="card">
                         <div className="card-header" id="headingOne">
@@ -116,7 +114,7 @@ class Contacts extends Component {
                                 <br />
                                 <button type='submit' onClick={this.handleSubmit}>Add</button>
                             </form>
-                            <Input />
+                            <Input contactID={this.state.contactID}/>
                             {this.state.invalidName && <div className="alert alert-danger" role="alert">
                                 Please enter a name!
                             </div>}
@@ -129,9 +127,7 @@ class Contacts extends Component {
 
                     {this.state.contacts.map(contact => {
                         return <Contact id={contact} />
-                    })} 
-
-                    
+                    })}                    
                 </div>
             </div>
         )

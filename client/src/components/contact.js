@@ -57,8 +57,6 @@ class Contact extends Component {
                         </div>
                     </div>
 
-                   
-
                     {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">
                             Festival: {this.state.festival} <br />

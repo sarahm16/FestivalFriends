@@ -7,9 +7,11 @@ import Contacts from './pages/contacts/contacts';
 import AddFriend from './pages/addFriend/addFriend';
 import Search from './pages/search/search';
 
+import Background from './images/edc2.jpg';
+
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{backgroundImage: "url(" + Background + ")"}}>
       <Router>
         <Route exact path='/' component={Dashboard} />
         <Route exact path='/contacts' component={Contacts} />
