@@ -23,7 +23,7 @@ class Input extends Component {
         return (
             <div>
                 <input type="file" onChange={this.handleChange}/>
-                <img src={this.state.file} style={{width: '200px'}}/>
+                <img src={this.state.file} style={{width: '200px'}} alt='contact'/>
             </div>
         );
     }
