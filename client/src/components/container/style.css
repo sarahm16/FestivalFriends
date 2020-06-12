@@ -1,0 +1,12 @@
+#submitSearch {
+    background-color: teal;
+    border-radius: 2px;
+    border: 0px;
+    color: white;
+    padding: 0px 10px 0px 10px;
+}
+
+#searchToggle {
+    color: white;
+    background-color:gray;
+}

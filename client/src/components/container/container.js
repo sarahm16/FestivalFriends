@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
-import Contacts from '../pages/contacts/contacts';
+
+//components
+import Contacts from '../../pages/contacts/contacts';
+
+//style
+import './style.css';
 
 class Container extends Component {
     constructor() {
         super();
         this.state={
             search: '',
-            criteria: '',
+            criteria: 'Friend',
             isSubmitted: false
         }
     }
@@ -20,8 +25,15 @@ class Container extends Component {
         let searchCriteria = event.target.id;
         event.preventDefault();
         this.setState({
-            isSubmitted: true,
+            // isSubmitted: true,
             criteria: searchCriteria
+        })
+    }
+
+    onSubmit = (event) => {
+        event.preventDefault();
+        this.setState({
+            isSubmitted: true
         })
     }
 
@@ -44,14 +56,17 @@ class Container extends Component {
 
                 <div className="input-group mb-3">
                     <div className="input-group-prepend">
-                        <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search</button>
+                        <button id='searchToggle' className="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{this.state.criteria}</button>
                         <div className="dropdown-menu">
-                            <button className="dropdown-item" id='friend' type='submit' onClick={this.onClick}>Friend</button>
-                            <button className="dropdown-item" id='festival' type='submit' onClick={this.onClick}>Festival</button>
+                            {this.state.criteria==='Festival' && <button className="dropdown-item" id='Friend' onClick={this.onClick}>Friend</button>}
+                            {this.state.criteria==='Friend' && <button className="dropdown-item" id='Festival' onClick={this.onClick}>Festival</button>}
                             {/* <button className="dropdown-item" href="#">Phone</button> */}
                         </div>
                     </div>
-                    <input id='search' value={this.state.search} onChange={this.onChange} type="text" className="form-control" aria-label="Text input with dropdown button" />
+                    <input id='search' value={this.state.search} onChange={this.onChange} type="text" placeholder='Search' className="form-control" aria-label="Text input with dropdown button" />
+                    <div className='input-group-append'>
+                        <button id='submitSearch' type='submit' onClick={this.onSubmit}><i className="fas fa-search"></i></button>
+                    </div>
                 </div>
 
                 {!this.state.isSubmitted && <Contacts search=''/>}

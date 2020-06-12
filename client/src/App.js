@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Dashboard from './pages/dashboard/dashboard';
 import Contacts from './pages/contacts/contacts';
-import Container from './pages/container';
+import Container from './components/container/container';
 
 import Background from './images/edc2.jpg';
 
