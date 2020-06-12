@@ -5,17 +5,20 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Dashboard from './pages/dashboard/dashboard';
 import Contacts from './pages/contacts/contacts';
 import Search from './pages/search/search';
+import Container from './pages/container';
 
 import Background from './images/edc2.jpg';
 
 function App() {
   return (
     <div className="App" style={{backgroundImage: "url(" + Background + ")"}}>
-      <Router>
+      
+      <Container />
+      {/* <Router>
         <Route exact path='/' component={Dashboard} />
         <Route exact path='/contacts' component={Contacts} />
         <Route exact path='/search' component={Search} />
-      </Router>
+      </Router> */}
     </div>
   );
 }

@@ -19,16 +19,20 @@ class Contacts extends Component {
         this.state = {
             contacts: [],
             show: false
-            
         }
     }
 
     async componentDidMount() { 
-        //sort contacts from friends db, set to state of component
-        const sortedContacts = await db.friends.orderBy('name').toArray()
-        this.setState({
-            contacts: sortedContacts
-        })
+        if(this.props.search === '') {
+            //sort contacts from friends db, set to state of component
+            const sortedContacts = await db.friends.orderBy('name').toArray()
+            this.setState({
+                contacts: sortedContacts
+            })
+        } else {
+            const filteredContacts = await db.friends.where({'name': this.props.search}).toArray();
+            this.setState({contacts: filteredContacts})
+        }
     }
 
     toggle = () => {
@@ -39,7 +43,7 @@ class Contacts extends Component {
     render() {
         return(
             <div>
-                <Navbar currentPage='contacts' />
+                {/* <Navbar currentPage='contacts' /> */}
                 <div className='container'>
                     <div className="card">
                         <div className="card-header" id="headingOne">
