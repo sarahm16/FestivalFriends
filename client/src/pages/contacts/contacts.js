@@ -30,7 +30,7 @@ class Contacts extends Component {
                 contacts: sortedContacts
             })
         } else {
-            const filteredContacts = await db.friends.where('name').equalsIgnoreCase(this.props.search).toArray();
+            const filteredContacts = await db.friends.where(this.props.criteria).equalsIgnoreCase(this.props.search).toArray();
             this.setState({contacts: filteredContacts})
         }
     }
