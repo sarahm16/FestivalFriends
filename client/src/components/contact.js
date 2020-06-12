@@ -1,32 +1,17 @@
 import React, { Component } from 'react';
 
-import { get, del } from 'idb-keyval';
+import db from '../database/database';
 
 class Contact extends Component {
     constructor() {
         super();
         this.state={
-            name: '',
-            festival: '',
-            phone: '',
-            notes: '',
             show: false
         }
     }
 
-    componentDidMount() {
-        get(this.props.id).then(res => {
-            this.setState({
-                name: res.name,
-                festival: res.festival,
-                phone: res.phone,
-                notes: res.notes
-            })
-        })
-    }
-
     onClick = () => {
-        del(this.props.id);
+        db.friends.delete(this.props.id)
         window.location.reload();
     }
 
@@ -36,17 +21,13 @@ class Contact extends Component {
 
     render() {
         return(
-            // <div className='row'>
-            //     <div className='col-6'>{props.name}</div>
-            //     <div className='col-6'><button>Delete</button></div>
-            // </div>
             <div>
                 <div className="card">
                     <div className="card-header" id="headingOne">
                         <div className='row'>
                             <div className="col-10 text-left">
                                 <button onClick={this.toggle} className="btn btn-link" aria-expanded="true" >
-                                    {this.state.name}
+                                    {this.props.name}
                                 </button>
                             </div>
                             <div className='col-2 text-right'>
@@ -59,9 +40,9 @@ class Contact extends Component {
 
                     {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">
-                            Festival: {this.state.festival} <br />
-                            Phone: {this.state.phone} <br />
-                            Notes: {this.state.notes}
+                            Festival: {this.props.festival} <br />
+                            Phone: {this.props.phone} <br />
+                            Notes: {this.props.notes}
                         </div>
                     </div>}
                 </div>

@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
 
+import db from '../../database/database';
+
 import Navbar from '../../components/navbar';
 
 class Search extends Component {
+
+    // componentDidMount() {
+    //     db.friends.put({name: 'Sarah', age: '27'})
+    // }
 
 
     render() {

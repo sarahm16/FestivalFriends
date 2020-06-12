@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import {keys, set} from 'idb-keyval';
 
+//components
 import Contact from '../../components/contact';
 import Navbar from '../../components/navbar';
 import Input from '../../components/input';
 
+//database
+import db from '../../database/database';
+
+//style
 import './style.css';
 
 class Contacts extends Component {
@@ -20,17 +25,22 @@ class Contacts extends Component {
             date: '',
             notes: '',
             invalidName: false,
-            isSubmitted: false,
-            contactID: ''
+            isSubmitted: false
         }
     }
 
     componentDidMount() {
-        keys().then(keys => {
-            let sortedKeys = keys.sort();
-            this.setState({
-                contacts: sortedKeys
-            })
+        // keys().then(keys => {
+        //     let sortedKeys = keys.sort();
+        //     this.setState({
+        //         contacts: sortedKeys
+        //     })
+        // })
+        //const friends = await db.friends
+        // console.log(db.friends.toArray())
+        //this.setState({contacts: db.friends})
+        db.friends.toArray().then(res => {
+            this.setState({contacts: res})
         })
     }
 
@@ -54,23 +64,21 @@ class Contacts extends Component {
             })
         } else { 
             //generate random id
-            let id = Math.floor(Math.random() * 1000000000)
-            //create contact from form            
-            let contact = {
+            let id = Math.floor(Math.random() * 10000000000000)            
+
+            //add new friend to database on submit
+            db.friends.add({
+                id: id,
                 name: this.state.name,
                 phone: this.state.phone,
                 festival: this.state.festival,
                 date: this.state.date,
                 notes: this.state.notes
-            }
-
-            //set first letter of name to first letter of id
-            //set random id to contact in idb keyvalue database
-            id = contact.name[0].toLowerCase() + id;
-            this.setState({contactID: id})
-            set(id, contact);
+            })
+            
             this.setState({isSubmitted: true})
         }
+        window.location.reload();
     }
 
     //render new contact for each key from database
@@ -114,7 +122,7 @@ class Contacts extends Component {
                                 <br />
                                 <button type='submit' onClick={this.handleSubmit}>Add</button>
                             </form>
-                            <Input contactID={this.state.contactID}/>
+                            <Input />
                             {this.state.invalidName && <div className="alert alert-danger" role="alert">
                                 Please enter a name!
                             </div>}
@@ -126,7 +134,13 @@ class Contacts extends Component {
                     </div>
 
                     {this.state.contacts.map(contact => {
-                        return <Contact id={contact} />
+                        
+                        return <Contact
+                            id={contact.id}
+                            name={contact.name}
+                            festival={contact.festival}
+                            notes={contact.notes}
+                            phone={contact.phone} />
                     })}                    
                 </div>
             </div>
