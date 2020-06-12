@@ -29,18 +29,11 @@ class Contacts extends Component {
         }
     }
 
-    componentDidMount() {
-        // keys().then(keys => {
-        //     let sortedKeys = keys.sort();
-        //     this.setState({
-        //         contacts: sortedKeys
-        //     })
-        // })
-        //const friends = await db.friends
-        // console.log(db.friends.toArray())
-        //this.setState({contacts: db.friends})
-        db.friends.toArray().then(res => {
-            this.setState({contacts: res})
+    async componentDidMount() { 
+        //sort contacts from friends db, set to state of component
+        const sortedContacts = await db.friends.orderBy('name').toArray()
+        this.setState({
+            contacts: sortedContacts
         })
     }
 
@@ -83,6 +76,7 @@ class Contacts extends Component {
 
     //render new contact for each key from database
     render() {
+        console.log(this.state.contacts)
         return(
             <div>
                 <Navbar currentPage='contacts' />
