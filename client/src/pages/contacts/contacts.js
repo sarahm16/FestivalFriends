@@ -25,12 +25,12 @@ class Contacts extends Component {
     async componentDidMount() { 
         if(this.props.search === '') {
             //sort contacts from friends db, set to state of component
-            const sortedContacts = await db.friends.orderBy('name').toArray()
+            const sortedContacts = await db.friends.orderBy('lowercaseName').toArray()
             this.setState({
                 contacts: sortedContacts
             })
         } else {
-            const filteredContacts = await db.friends.where({'name': this.props.search}).toArray();
+            const filteredContacts = await db.friends.where('name').equalsIgnoreCase(this.props.search).toArray();
             this.setState({contacts: filteredContacts})
         }
     }

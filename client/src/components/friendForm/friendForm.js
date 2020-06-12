@@ -15,6 +15,7 @@ class Form extends Component {
             festival: '',
             date: '',
             notes: '',
+            lowercaseName: '',
             invalidName: false,
             isSubmitted: false
         }
@@ -45,7 +46,8 @@ class Form extends Component {
                 phone: this.state.phone,
                 festival: this.state.festival,
                 date: this.state.date,
-                notes: this.state.notes
+                notes: this.state.notes,
+                lowercaseName: this.state.name.toLowerCase()
             })
             
             this.setState({isSubmitted: true})
