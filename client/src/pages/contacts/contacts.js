@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {keys, set} from 'idb-keyval';
 
 //components
 import Contact from '../../components/contact';

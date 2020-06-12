@@ -1,7 +1,5 @@
 import React from 'react';
 
-import {get} from 'idb-keyval';
-
 import './style.css';
 
 function Navbar(props) {

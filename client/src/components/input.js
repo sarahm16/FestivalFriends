@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { set } from 'idb-keyval';
 
 class Input extends Component {
     constructor(props){
@@ -12,7 +11,7 @@ class Input extends Component {
 
     handleChange(event) {
         console.log(URL.createObjectURL(event.target.files[0]))
-        set('image', URL.createObjectURL(event.target.files[0]));
+        // set('image', URL.createObjectURL(event.target.files[0]));
         this.setState({
             file: URL.createObjectURL(event.target.files[0])
         })
