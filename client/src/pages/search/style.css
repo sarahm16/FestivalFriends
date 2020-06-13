@@ -1,5 +1,5 @@
 #submitSearch {
-    background-color: teal;
+    background-color: rgba(0, 128, 128, 0.637);
     border-radius: 2px;
     border: 0px;
     color: white;
@@ -8,5 +8,9 @@
 
 #searchToggle {
     color: white;
-    background-color:gray;
+    background-color:rgba(128, 128, 128, 0.623);
+}
+
+.search {
+    margin-top: 10px;
 }

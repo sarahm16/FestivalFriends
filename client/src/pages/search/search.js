@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 
 //components
-import Contacts from '../../pages/contacts/contacts';
+import Contacts from '../contacts/contacts';
+import Navbar from '../../components/navbar';
 
 //style
 import './style.css';
 
-class Container extends Component {
+class Search extends Component {
     constructor() {
         super();
         this.state={
@@ -40,6 +41,8 @@ class Container extends Component {
     render() {
         return(
             <div>
+            <Navbar />
+            <div className='container search'>
                 {/* <div class="md-form active-pink active-pink-2 mb-3 mt-0">
                     <input class="form-control" id='search' value={this.state.search} onChange={this.onChange} type="text" placeholder="Search" aria-label="Search" />
                 </div> */}
@@ -68,13 +71,14 @@ class Container extends Component {
                         <button id='submitSearch' type='submit' onClick={this.onSubmit}><i className="fas fa-search"></i></button>
                     </div>
                 </div>
+            </div>
 
                 {!this.state.isSubmitted && <Contacts search=''/>}
                 {this.state.isSubmitted && <Contacts search={this.state.search} criteria={this.state.criteria} />}
             </div>
+            
         )
     }
-
 }
 
-export default Container;
+export default Search;
