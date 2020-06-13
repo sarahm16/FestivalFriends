@@ -11,7 +11,6 @@ class Input extends Component {
 
     handleChange(event) {
         console.log(URL.createObjectURL(event.target.files[0]))
-        // set('image', URL.createObjectURL(event.target.files[0]));
         this.setState({
             file: URL.createObjectURL(event.target.files[0])
         })
@@ -21,8 +20,11 @@ class Input extends Component {
         
         return (
             <div>
-                <input type="file" onChange={this.handleChange}/>
-                <img src={this.state.file} style={{width: '200px'}} alt='contact'/>
+                {/* <input type="file" onChange={this.handleChange}/> */}
+                <label class="btn btn-primary">
+                    <i class="fa fa-image"></i> Upload image<input type="file" style={{display: 'none'}}  name="image" />
+                </label>
+                {this.state.file !== null && <img src={this.state.file} style={{width: '200px'}} alt='contact'/>}
             </div>
         );
     }

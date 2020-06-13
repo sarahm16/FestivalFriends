@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 //components
 import Contacts from '../contacts/contacts';
-import Navbar from '../../components/navbar';
 
 //style
 import './style.css';

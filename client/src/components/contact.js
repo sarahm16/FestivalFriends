@@ -40,9 +40,14 @@ class Contact extends Component {
 
                     {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">
-                            Festival: {this.props.festival} <br />
-                            Phone: {this.props.phone} <br />
-                            Notes: {this.props.notes}
+                            <div className='row'>
+                                    Festival: {this.props.festival} <br />                                
+                                    Phone: {this.props.phone}                                
+                            </div>
+                            
+                            <div className='row'>
+                                <div className='col-12 notes'>Notes: {this.props.notes}</div>
+                            </div>
                         </div>
                     </div>}
                 </div>

@@ -13,7 +13,7 @@ import Background from './images/edc2.jpg';
 
 function App() {
   return (
-    <div className="App" style={{backgroundImage: "url(" + Background + ")"}}>
+    <div className="App" style={{backgroundImage: "url(" + Background + ")", height: '100%'}}>
       
       <Navbar />
         <Router>

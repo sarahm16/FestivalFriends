@@ -65,6 +65,7 @@ class Contacts extends Component {
                     {/* create contact component for each object in array */}
                     {this.state.contacts.map(contact => {
                         return <Contact
+                            key={contact.id}
                             id={contact.id}
                             name={contact.name}
                             festival={contact.festival}

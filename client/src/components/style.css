@@ -14,3 +14,12 @@
 nav {
     margin-bottom: 10px;
 }
+
+.card {
+    text-align: left;
+}
+
+.notes {
+    background-color: rgba(211, 211, 211, 0.616);
+    margin-top: 10px;
+}

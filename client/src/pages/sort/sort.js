@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 //components
-import Navbar from '../../components/navbar';
 import Contacts from '../contacts/contacts';
 
 //style
@@ -18,7 +17,16 @@ class Sort extends Component {
     render() {
         return(
             <div>
-                <div className='sort-options'>Sort by: </div>
+                <div className='sort-options'>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                        <label className="form-check-label" htmlFor="inlineRadio1">Alphabetically</label>
+                    </div>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                        <label className="form-check-label" htmlFor="inlineRadio2">Sort by Festival</label>
+                    </div>
+                </div>
                 <div className='container'>
                     <Contacts search=''/>
                 </div>
