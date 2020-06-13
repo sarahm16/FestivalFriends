@@ -8,7 +8,6 @@ class AllFriends extends Component {
     render() {
         return(
             <div>
-                <Navbar />
                 <div className='container'>
                     <Contacts search='' />
                 </div>

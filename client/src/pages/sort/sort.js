@@ -18,7 +18,6 @@ class Sort extends Component {
     render() {
         return(
             <div>
-                <Navbar />
                 <div className='sort-options'>Sort by: </div>
                 <div className='container'>
                     <Contacts search=''/>

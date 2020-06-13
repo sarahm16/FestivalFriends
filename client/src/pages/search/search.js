@@ -41,7 +41,6 @@ class Search extends Component {
     render() {
         return(
             <div>
-            <Navbar />
             <div className='container search'>
                 {/* <div class="md-form active-pink active-pink-2 mb-3 mt-0">
                     <input class="form-control" id='search' value={this.state.search} onChange={this.onChange} type="text" placeholder="Search" aria-label="Search" />
