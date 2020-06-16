@@ -66,7 +66,7 @@ class Form extends Component {
                     </div>
                     <div className='form-row'>
                         <div className='form-group col-6'>
-                            <input type="text" className="form-control" id="phone" placeholder="Phone Number" onChange={this.onChange} value={this.state.phone}/>
+                            <input type="text" className="form-control" id="phone" placeholder="Phone" onChange={this.onChange} value={this.state.phone}/>
                         </div>
                         <div className='form-group col-6'>
                             <input type="text" className="form-control" id="date" placeholder="Date" onChange={this.onChange} value={this.state.date}/>
@@ -79,9 +79,10 @@ class Form extends Component {
                 
                     <textarea className='notes' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>
                     <br />
-                    <button type='submit' onClick={this.handleSubmit}>Add</button>
+                    <Input />
+                    <button type='submit' onClick={this.handleSubmit}>Add Friend</button>
                 </form>
-                <Input />
+                
                 {this.state.invalidName && <div className="alert alert-danger" role="alert">
                     Please enter a name!
                 </div>}

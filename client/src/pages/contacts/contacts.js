@@ -35,7 +35,7 @@ class Contacts extends Component {
             if(this.props.criteria==='Friend') {criteria='name'} else {criteria='festival'}
             const filteredContacts = await db.friends.where(criteria).equalsIgnoreCase(this.props.search).toArray();
             this.setState({contacts: filteredContacts})
-        }
+        }       
     }
 
     toggle = () => {
