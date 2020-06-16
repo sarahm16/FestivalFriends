@@ -27,16 +27,23 @@ class Input extends Component {
             id: '1',
             name: URL.createObjectURL(event.target.files[0])
         })
-        
     }
 
     render() {
         return (
             <div>
-                {/* <input type="file" onChange={this.handleChange}/> */}
-                <label className="btn btn-primary">
-                    <i className="fa fa-image"></i> Upload image<input type="file" style={{display: 'none'}}  name="image" onChange={this.handleChange}/>
-                </label>
+                <div className='row'>
+                    <div className='col-6'>
+                        <label className="btn btn-primary">
+                            <i className="fa fa-image"></i> Upload photo<input type="file" style={{display: 'none'}}  name="image" onChange={this.handleChange}/>
+                        </label>
+                    </div>
+                    <div className='col-6'>
+                        <label className="btn btn-primary">
+                            <i className="fas fa-camera"></i> Take photo<input type="file" style={{display: 'none'}}  name="image" onChange={this.handleChange}/>
+                        </label> 
+                    </div>
+                </div>
                 {this.state.file !== null && <img src={this.state.file} style={{width: '200px'}} alt='contact'/>}
             </div>
         );

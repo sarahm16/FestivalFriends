@@ -77,10 +77,10 @@ class Form extends Component {
                         <input type="text" className="form-control" id="festival" placeholder="Festival" onChange={this.onChange} value={this.state.festival}/>
                     </div>
                 
-                    <textarea className='notes' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>
+                    <textarea className='notes form-control' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>
                     <br />
                     <Input />
-                    <button type='submit' onClick={this.handleSubmit}>Add Friend</button>
+                    <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}>Add Friend</button>
                 </form>
                 
                 {this.state.invalidName && <div className="alert alert-danger" role="alert">
