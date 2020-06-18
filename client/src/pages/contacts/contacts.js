@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 
 //components
 import Contact from '../../components/contact';
-import Navbar from '../../components/navbar';
-import Input from '../../components/input';
+// import Navbar from '../../components/navbar';
+// import Input from '../../components/input';
 import Form from '../../components/friendForm/friendForm';
 
 //database

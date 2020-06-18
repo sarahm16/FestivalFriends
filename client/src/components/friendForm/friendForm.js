@@ -68,12 +68,11 @@ class Form extends Component {
             cropping: true,
             multiple: false
         },
-            (error, result) => {
-                console.log(result[0].url);
-                this.setState({
-                    image: result[0].url
-                })
-            });
+        (error, result) => {
+            this.setState({
+                image: result[0].url
+            })
+        });
     }
 
     render() {
@@ -82,7 +81,6 @@ class Form extends Component {
             <div className="card-body">
                 <form>
                     <div className="form-group">
-                        {/* <label for="name">Name</label> */}
                         <input type="text" className="form-control" id="name" placeholder="Name" onChange={this.onChange} value={this.state.name}/>
                     </div>
                     <div className='form-row'>
@@ -94,14 +92,13 @@ class Form extends Component {
                         </div>
                     </div>
                     <div className="form-group">
-                        {/* <label for="festival">Festival you met at:</label> */}
                         <input type="text" className="form-control" id="festival" placeholder="Festival" onChange={this.onChange} value={this.state.festival}/>
                     </div>
                 
                     <textarea className='notes form-control' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>
                     <br />
                     {/* <Input /> */}
-                    <button className='btn btn-primary' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
+                    <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
                     <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}>Add Friend</button>
                 </form>
                 

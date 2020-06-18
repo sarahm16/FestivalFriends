@@ -11,6 +11,6 @@
     padding: 5px;
 }
 
-#submit {
-    width: 100%;
+.btn {
+    margin-bottom: 10px;
 }

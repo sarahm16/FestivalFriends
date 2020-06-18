@@ -20,14 +20,13 @@ class Contact extends Component {
     }
 
     render() {
-        console.log('image: ' + this.props.image)
         return(
             <div>
                 <div className="card">
                     <div className="card-header" id="headingOne">
                         <div className='row'>
                             <div className="col-10 text-left">
-                                <button onClick={this.toggle} className="btn btn-link" aria-expanded="true" >
+                                <button onClick={this.toggle} className="btn" aria-expanded="true" >
                                     {this.props.name}
                                 </button>
                             </div>
@@ -41,7 +40,7 @@ class Contact extends Component {
 
                     {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">
-                            {this.props.image !== undefined && <div className='row'>
+                            {this.props.image !== '' && <div className='row'>
                                 <img src={this.props.image} alt='pic' style={{width: '100%'}}/>
                             </div>}
                             <div className='row'>

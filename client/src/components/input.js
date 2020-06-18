@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import cloudinary from 'cloudinary-react';
+//import cloudinary from 'cloudinary-react';
 
 import db from '../database/database';
 
@@ -13,11 +13,6 @@ class Input extends Component {
       }
 
     handleChange(event) {
-        // let reader = new FileReader();
-        // reader.readAsDataURL(event.target.files[0]);
-        // reader.onload = (event) => {
-        //     console.log(reader.result)
-        // }
         
         console.log(URL.createObjectURL(event.target.files[0]))
         this.setState({

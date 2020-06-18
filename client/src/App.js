@@ -7,7 +7,7 @@ import Contacts from './pages/contacts/contacts';
 import Search from './pages/search/search';
 import Sort from './pages/sort/sort';
 import AllFriends from './pages/all/allFriends';
-import Navbar from './components/navbar';
+// import Navbar from './components/navbar';
 
 import Background from './images/edc2.jpg';
 
