@@ -88,7 +88,7 @@ class Form extends Component {
                             <input type="text" className="form-control" id="phone" placeholder="Phone" onChange={this.onChange} value={this.state.phone}/>
                         </div>
                         <div className='form-group col-6'>
-                            <input type="text" className="form-control" id="date" placeholder="Date" onChange={this.onChange} value={this.state.date}/>
+                            <input type="date" className="form-control" id="date" placeholder="Date" onChange={this.onChange} value={this.state.date}/>
                         </div>
                     </div>
                     <div className="form-group">
