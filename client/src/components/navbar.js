@@ -74,26 +74,26 @@ function Navbar(props) {
 
         <nav className='navbar navbar-light bg-light'>
             <div className='row'>
-                <div className='col-6'>
+                {/* <div className='col-6'>
                     <h4>FestivalFriends</h4>
                 </div>
-                <div className='col-6'>
-                    <div className='row'>
+                <div className='col-6'> */}
+
                         <ul className='nav nav-tabs'>
-                            <div className='col-6'>
+                                <li><h4>FestivalFriends</h4></li>
+
                                 <li className='nav-item'>
                                     <Link to='/all' className={props.currentPage==='all' ? 'nav-link active' : 'nav-link'}>All</Link>
                                 </li>
-                            </div>
-                            <div className='col-6'>
+
+                            
                                 <li className='nav-item'>
                                     <Link to='/search' className={props.currentPage==='search' ? 'nav-link active' : 'nav-link'}>Search</Link>
                                 </li>
-                            </div>
+                            
                         </ul>
-                    </div>
+                    
                 </div>
-            </div>
         </nav>
 
     )

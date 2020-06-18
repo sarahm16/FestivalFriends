@@ -13,12 +13,11 @@
 }
 
 nav {
-    margin-bottom: 10px;
-    padding: 0px;
+    width: 100%
 }
 
-.nav-item {
-    margin: 0px;
+h4 {
+    padding: 5px 10px 0px 10px;
 }
 
 .card-body {

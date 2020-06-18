@@ -12,7 +12,6 @@ class AllFriends extends Component {
     }
     onChange = (event) => {
         this.setState({[event.target.id]: event.target.value})
-        console.log(event.target.value)
     }
 
     render() {
@@ -25,7 +24,7 @@ class AllFriends extends Component {
                         <option value='festival'>By Festival</option>
                     </select>
                 </div>
-                <Contacts search='' />
+                <Contacts search='' sort={this.state.sort} />
             </div>
         )
     }

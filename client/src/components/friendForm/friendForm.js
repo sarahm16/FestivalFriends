@@ -49,12 +49,13 @@ class Form extends Component {
                 date: this.state.date,
                 notes: this.state.notes,
                 lowercaseName: this.state.name.toLowerCase(),
+                lowercaseFestival: this.state.festival.toLowerCase(),
                 image: this.state.image
             })
             
             this.setState({isSubmitted: true})
         }
-        // window.location.reload();
+        window.location.reload();
     }
 
     uploadWidget = (event) => {

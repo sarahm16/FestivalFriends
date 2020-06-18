@@ -26,11 +26,20 @@ class Contacts extends Component {
         console.log('contacts criteria: ' + this.props.criteria)
         let criteria='';
         if(this.props.search === '') {
-            //sort contacts from friends db, set to state of component
-            const sortedContacts = await db.friends.orderBy('lowercaseName').toArray()
-            this.setState({
-                contacts: sortedContacts
-            })
+            if(this.props.sort === 'alphabetical') {
+                //sort contacts from friends db, set to state of component
+                const sortedContacts = await db.friends.orderBy('lowercaseName').toArray()
+                this.setState({
+                    contacts: sortedContacts
+                })
+            }
+            else {
+                const sortedContacts = await db.friends.orderBy('lowercaseFestival').toArray();
+                this.setState({
+                    contacts: sortedContacts
+                })
+            }
+            
         } else {
             if(this.props.criteria==='Friend') {criteria='name'} else {criteria='festival'}
             const filteredContacts = await db.friends.where(criteria).equalsIgnoreCase(this.props.search).toArray();
