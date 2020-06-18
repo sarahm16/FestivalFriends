@@ -6,17 +6,9 @@ class Contact extends Component {
     constructor() {
         super();
         this.state={
-            show: false,
-            src: ''
+            show: false
         }
     }
-
-    // async componentDidMount() {
-    //     let image = await db.friends.where('id').equals('1').toArray();
-    //     this.setState({src: image[0].name})
-    //     //console.log(imageURL)
-    //     //this.setState({src: imageURL})
-    // }
 
     onClick = () => {
         db.friends.delete(this.props.id)
@@ -28,7 +20,7 @@ class Contact extends Component {
     }
 
     render() {
-        console.log(this.state.src)
+        console.log('image: ' + this.props.image)
         return(
             <div>
                 <div className="card">
@@ -49,7 +41,9 @@ class Contact extends Component {
 
                     {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">
-                            {/* <img src={this.state.src} alt='friend' /> */}
+                            {this.props.image !== 'undefined' && <div className='row'>
+                                <img src={this.props.image} alt='pic' style={{width: '100%'}}/>
+                            </div>}
                             <div className='row'>
                                     Festival: {this.props.festival} <br />                                
                                     Phone: {this.props.phone}                                

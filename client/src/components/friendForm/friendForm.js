@@ -15,6 +15,7 @@ class Form extends Component {
             festival: '',
             date: '',
             notes: '',
+            image: '',
             lowercaseName: '',
             invalidName: false,
             isSubmitted: false
@@ -47,12 +48,31 @@ class Form extends Component {
                 festival: this.state.festival,
                 date: this.state.date,
                 notes: this.state.notes,
-                lowercaseName: this.state.name.toLowerCase()
+                lowercaseName: this.state.name.toLowerCase(),
+                image: this.state.image
             })
             
             this.setState({isSubmitted: true})
         }
         // window.location.reload();
+    }
+
+    uploadWidget = (event) => {
+        event.preventDefault()
+        window.cloudinary.openUploadWidget({ 
+            cloud_name: 'sarahm16', 
+            upload_preset: 'gvezom1v', 
+            sources: ['camera', 'local'],
+            // showAdvancedOptions: true,
+            cropping: true,
+            multiple: false
+        },
+            (error, result) => {
+                console.log(result[0].url);
+                this.setState({
+                    image: result[0].url
+                })
+            });
     }
 
     render() {
@@ -79,7 +99,8 @@ class Form extends Component {
                 
                     <textarea className='notes form-control' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>
                     <br />
-                    <Input />
+                    {/* <Input /> */}
+                    <button className='btn btn-primary' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
                     <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}>Add Friend</button>
                 </form>
                 

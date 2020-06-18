@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import cloudinary from 'cloudinary-react';
 
 import db from '../database/database';
 
@@ -22,11 +23,13 @@ class Input extends Component {
         this.setState({
             file: URL.createObjectURL(event.target.files[0])
         })
+    }
 
-        db.friends.add({
-            id: '1',
-            name: URL.createObjectURL(event.target.files[0])
-        })
+    uploadWidget() {
+        // cloudinary.openUploadWidget({ cloud_name: 'sarahm16', upload_preset: 'gvezom1v', tags:['xmas']},
+        //     function(error, result) {
+        //         console.log(result);
+        //     }); 
     }
 
     render() {

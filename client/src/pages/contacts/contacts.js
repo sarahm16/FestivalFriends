@@ -53,7 +53,7 @@ class Contacts extends Component {
                             <div className='row'>
                                 <div className="col-12">
                                     <button onClick={this.toggle} className="btn btn-link add-contact" data-toggle="collapse" data-target='#collapseOne' aria-expanded="true" aria-controls="collapseOne">
-                                    <i className="fas fa-plus-circle add-icon"></i> Add Friend
+                                        <i className="fas fa-plus-circle add-icon"></i> Add Friend
                                     </button>
                                 </div>
                             </div>
@@ -65,6 +65,7 @@ class Contacts extends Component {
                     {/* create contact component for each object in array */}
                     {this.state.contacts.map(contact => {
                         return <Contact
+                            image={contact.image}
                             key={contact.id}
                             id={contact.id}
                             name={contact.name}
