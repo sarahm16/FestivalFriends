@@ -14,8 +14,6 @@ import Background from './images/edc2.jpg';
 function App() {
   return (
     <div className="App" style={{backgroundImage: "url(" + Background + ")", height: '100%'}}>
-      
-      <Navbar />
         <Router>
           <Route exact path='/' component={Dashboard} />
           <Route exact path='/contacts' component={Contacts} />

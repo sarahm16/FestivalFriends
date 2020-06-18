@@ -46,7 +46,6 @@ class Contacts extends Component {
     render() {
         return(
             <div>
-                {/* <Navbar currentPage='contacts' /> */}
                 <div className='container contacts'>
                     <div className="card">
                         <div className="card-header" id="headingOne">

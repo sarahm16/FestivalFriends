@@ -41,7 +41,7 @@ class Contact extends Component {
 
                     {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">
-                            {this.props.image !== 'undefined' && <div className='row'>
+                            {this.props.image !== undefined && <div className='row'>
                                 <img src={this.props.image} alt='pic' style={{width: '100%'}}/>
                             </div>}
                             <div className='row'>

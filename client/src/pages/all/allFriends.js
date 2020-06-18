@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Contacts from '../contacts/contacts';
+import Navbar from '../../components/navbar';
 
 class AllFriends extends Component {
     constructor() {
@@ -17,6 +18,7 @@ class AllFriends extends Component {
     render() {
         return(
             <div>
+                <Navbar currentPage='all' />
                 <div className='container'>
                     <select value={this.state.sort} onChange={this.onChange} id='sort' className="form-control form-control-sm">
                         <option value='alphabetical'>Alphabetically</option>
