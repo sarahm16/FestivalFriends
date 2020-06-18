@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import db from '../../database/database';
 
 //components
-import Input from '../input';
+// import Input from '../input';
 
 class Form extends Component {
     constructor() {
