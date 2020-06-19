@@ -6,7 +6,9 @@ class Contact extends Component {
     constructor() {
         super();
         this.state={
-            show: false
+            show: false,
+            phone: 'No phone number saved',
+            festival: 'No festival saved'
         }
     }
 
@@ -17,6 +19,17 @@ class Contact extends Component {
 
     toggle = () => {
         this.setState({show: !this.state.show})
+    }
+
+    componentDidMount() {
+        if(this.props.phone !== '') {
+            this.setState({
+                phone: this.props.phone
+            })
+        }
+        if(this.props.festival !== '') {
+            this.setState({festival: this.props.festival})
+        }
     }
 
     render() {
@@ -44,8 +57,8 @@ class Contact extends Component {
                                 <img src={this.props.image} alt='pic' style={{width: '100%'}}/>
                             </div>}
                             <div className='row'>
-                                    Festival: {this.props.festival} <br />                                
-                                    Phone: {this.props.phone}                                
+                                    Festival: {this.state.festival} <br />                                
+                                    Phone: {this.state.phone}                                
                             </div>
                             
                             <div className='row'>
