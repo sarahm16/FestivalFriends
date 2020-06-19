@@ -15,7 +15,8 @@ class Form extends Component {
             image: '',
             lowercaseName: '',
             invalidName: false,
-            isSubmitted: false
+            isSubmitted: false,
+            type: 'text'
         }
     }
 
@@ -75,6 +76,10 @@ class Form extends Component {
         });
     }
 
+    onFocus = () => {
+        this.setState({type: 'date'})
+    }
+
     render() {
         return(
         <div aria-labelledby="headingOne">
@@ -88,7 +93,7 @@ class Form extends Component {
                             <input type="text" className="form-control" id="phone" placeholder="Phone" onChange={this.onChange} value={this.state.phone}/>
                         </div>
                         <div className='form-group col-6'>
-                            <input type="date" className="form-control" id="date" placeholder="Date" onChange={this.onChange} value={this.state.date}/>
+                            <input type={this.state.type} onFocus={this.onFocus} className="form-control" id="date" placeholder="Date" onChange={this.onChange} value={this.state.date}/>
                         </div>
                     </div>
                     <div className="form-group">
