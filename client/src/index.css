@@ -5,8 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
-  background-image: url('../src/images/insomniac.jpg');
+  /* height: 100%; */
+  background-image: url('../src/images/insomniac2.png');
+  background-size: cover;
+  /* height: auto; */
+  min-height: 100vh;
+  background-repeat: no-repeat;
 }
 
 code {
