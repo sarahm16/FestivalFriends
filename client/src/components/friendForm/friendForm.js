@@ -54,8 +54,9 @@ class Form extends Component {
             })
             
             this.setState({isSubmitted: true})
+            window.location.reload();
         }
-        window.location.reload();
+        
     }
 
     uploadWidget = (event) => {
@@ -101,6 +102,15 @@ class Form extends Component {
                     <textarea className='notes form-control' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>
                     <br />
                     {/* <Input /> */}
+                    <div className='row'>
+                        <div className='col-4'></div>
+                        <div className='col-4'>
+                            {this.state.image !== '' &&<img src={this.state.image}  alt='thumbnail'
+                            style={{width: '150px'}}
+                            />}
+                        </div>
+                        <div className='col-4'></div>
+                    </div>
                     <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
                     <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}>Add Friend</button>
                 </form>
