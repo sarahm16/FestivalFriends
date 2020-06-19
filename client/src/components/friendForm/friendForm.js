@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 //database
 import db from '../../database/database';
 
+import './style.css';
+
 class Form extends Component {
     constructor() {
         super();
@@ -15,8 +17,7 @@ class Form extends Component {
             image: '',
             lowercaseName: '',
             invalidName: false,
-            isSubmitted: false,
-            type: 'text'
+            isSubmitted: false
         }
     }
 
@@ -76,10 +77,6 @@ class Form extends Component {
         });
     }
 
-    onFocus = () => {
-        this.setState({type: 'date'})
-    }
-
     render() {
         return(
         <div aria-labelledby="headingOne">
@@ -93,7 +90,7 @@ class Form extends Component {
                             <input type="text" className="form-control" id="phone" placeholder="Phone" onChange={this.onChange} value={this.state.phone}/>
                         </div>
                         <div className='form-group col-6'>
-                            <input type={this.state.type} onFocus={this.onFocus} className="form-control" id="date" placeholder="Date" onChange={this.onChange} value={this.state.date}/>
+                            <input type='date' className="form-control" id="date" placeholder="Date" onChange={this.onChange} value={this.state.date}/>
                         </div>
                     </div>
                     <div className="form-group">
@@ -101,17 +98,13 @@ class Form extends Component {
                     </div>
                 
                     <textarea className='notes form-control' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>
-                    <br />
-                    {/* <Input /> */}
-                    <div className='row'>
-                        <div className='col-4'></div>
-                        <div className='col-4'>
-                            {this.state.image !== '' &&<img src={this.state.image}  alt='thumbnail'
-                            style={{width: '150px'}}
-                            />}
-                        </div>
-                        <div className='col-4'></div>
-                    </div>
+                    
+                    {this.state.image !== '' && <img
+                        src={this.state.image} 
+                        alt='thumbnail'
+                        style={{width: '150px'}}
+                    />}
+                    
                     <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
                     <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}
                         style={{
