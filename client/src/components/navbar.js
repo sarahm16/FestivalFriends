@@ -73,19 +73,16 @@ function Navbar(props) {
         // </nav>
 
         <nav className='navbar navbar-light bg-light'>
-            <div className='row'>
-                <ul className='nav nav-tabs'>
-                    <li><h4>FestivalFriends</h4></li>
-                    <li className='nav-item'>
-                        <Link to='/all' className={props.currentPage==='all' ? 'nav-link active' : 'nav-link'}>All</Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to='/search' className={props.currentPage==='search' ? 'nav-link active' : 'nav-link'}>Search</Link>
-                    </li>
-                </ul>
-            </div>
+            <ul className='nav nav-tabs w-100'>
+                <li><h4>FestivalFriends</h4></li>
+                <li className='nav-item ml-auto'>
+                    <Link to='/all' className={props.currentPage==='all' ? 'nav-link active' : 'nav-link'}>All</Link>
+                </li>
+                <li className='nav-item ml-auto'>
+                    <Link to='/search' className={props.currentPage==='search' ? 'nav-link active' : 'nav-link'}>Search</Link>
+                </li>
+            </ul>
         </nav>
-
     )
 }
 
