@@ -13,7 +13,7 @@ import Background from './images/edc2.jpg';
 
 function App() {
   return (
-    <div className="App" style={{backgroundImage: "url(" + Background + ")", height: '100%'}}>
+    // <div className="App" style={{backgroundImage: "url(" + Background + ")", height: '100%'}}>
         <Router>
           <Route exact path='/' component={AllFriends} />
           <Route exact path='/contacts' component={Contacts} />
@@ -22,7 +22,7 @@ function App() {
           <Route exact path='/all' component={AllFriends} />
         </Router>
       
-    </div>
+    // </div>
   );
 }
 
