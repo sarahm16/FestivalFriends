@@ -69,9 +69,12 @@ class Form extends Component {
             multiple: false
         },
         (error, result) => {
-            this.setState({
-                image: result[0].url
-            })
+            if(error) {console.log(error)}
+            else {
+                this.setState({
+                    image: result[0].url
+                })
+            }
         });
     }
 
