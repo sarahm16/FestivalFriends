@@ -3,9 +3,6 @@ import React, {Component} from 'react';
 //database
 import db from '../../database/database';
 
-//components
-// import Input from '../input';
-
 class Form extends Component {
     constructor() {
         super();
@@ -65,7 +62,6 @@ class Form extends Component {
             cloud_name: 'sarahm16', 
             upload_preset: 'gvezom1v', 
             sources: ['camera', 'local'],
-            // showAdvancedOptions: true,
             cropping: true,
             multiple: false
         },
@@ -112,7 +108,10 @@ class Form extends Component {
                         <div className='col-4'></div>
                     </div>
                     <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
-                    <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}>Add Friend</button>
+                    <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}
+                        style={{
+                            opacity: this.state.image==='' ? '30%' : '100%'}}
+                    >Add Friend</button>
                 </form>
                 
                 {this.state.invalidName && <div className="alert alert-danger" role="alert">
