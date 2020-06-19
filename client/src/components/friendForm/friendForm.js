@@ -77,6 +77,12 @@ class Form extends Component {
         });
     }
 
+    removeImage = () => {
+        this.setState({
+            image: ''
+        })
+    }
+
     render() {
         return(
         <div aria-labelledby="headingOne">
@@ -99,11 +105,15 @@ class Form extends Component {
                 
                     <textarea className='notes form-control' id='notes' placeholder='Notes' onChange={this.onChange} value={this.state.notes}></textarea>
                     
-                    {this.state.image !== '' && <img
-                        src={this.state.image} 
+                    {this.state.image !== '' &&
+                    <div className='thumbnail'><img
+                        src={this.state.image}
+                        // src='https://res.cloudinary.com/sarahm16/image/upload/v1592606251/dxu6wdn3kyzzdiavjyyl.jpg' 
                         alt='thumbnail'
                         style={{width: '150px'}}
-                    />}
+                    />
+                    <button id='x' className='btn btn-danger' onClick={this.removeImage}>X</button>
+                    </div>}
                     
                     <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
                     <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}

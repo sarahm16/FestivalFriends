@@ -15,10 +15,22 @@
     margin-bottom: 10px;
 }
 
+.thumbnail {
+    margin: auto;
+    margin-bottom: 10px;
+    display: block;
+    position: relative;
+}
+
 img {
     display: block;
     margin: 0 auto;
-    margin-bottom: 10px;
+}
+
+#x {
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
 .notes {
