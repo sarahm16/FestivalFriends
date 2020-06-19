@@ -32,3 +32,9 @@ h4 {
     background-color: rgba(211, 211, 211, 0.493);
     margin-top: 10px;
 }
+
+.rainbow-text {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
+    background-clip: text;
+    color: transparent;
+}
