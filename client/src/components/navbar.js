@@ -75,7 +75,7 @@ function Navbar(props) {
         <nav className='navbar navbar-light bg-light'>
             <ul className='nav nav-tabs w-100'>
                 <li><h4>FestivalFriends</h4></li>
-                <li className='nav-item ml-auto'>
+                <li className='nav-item ml-auto all'>
                     <Link to='/all' className={props.currentPage==='all' ? 'nav-link active' : 'nav-link'}>All</Link>
                 </li>
                 <li className='nav-item ml-auto'>
