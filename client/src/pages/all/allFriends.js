@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import Contacts from '../contacts/contacts';
 import Navbar from '../../components/navbar';
@@ -24,7 +25,8 @@ class AllFriends extends Component {
                         <option value='festival'>By Festival</option>
                     </select>
                 </div>
-                <Contacts search='' sort={this.state.sort} />
+                {this.state.sort==='festival' && <Redirect to='/sort' />}
+                <Contacts search='' sort='alphabetical' />
             </div>
         )
     }

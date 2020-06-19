@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom';
 
 //components
 import Contacts from '../contacts/contacts';
+import Navbar from '../../components/navbar';
 
 //style
 import './style.css';
@@ -10,27 +12,26 @@ class Sort extends Component {
     constructor() {
         super();
         this.state={
-            sort: ''
+            sort: 'festival'
         }
+    }
+
+    onChange = (event) => {
+        this.setState({[event.target.id]: event.target.value})
     }
     
     render() {
         return(
-            <div>
-                {/* <div className='sort-options'>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                        <label className="form-check-label" htmlFor="inlineRadio1">Alphabetically</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-                        <label className="form-check-label" htmlFor="inlineRadio2">Sort by Festival</label>
-                    </div>
-                </div> */}
-                
+            <div>                
+                <Navbar currentPage='all' />
                 <div className='container'>
-                    <Contacts search=''/>
+                    <select value={this.state.sort} onChange={this.onChange} id='sort' className="form-control form-control-sm">
+                        <option value='festival'>By Festival</option>
+                        <option value='alphabetical'>Alphabetically</option>
+                    </select>
                 </div>
+                {this.state.sort==='alphabetical' && <Redirect to='/all' />}
+                <Contacts search='' sort='festival' />
             </div>
         )
     }
