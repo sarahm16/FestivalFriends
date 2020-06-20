@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom';
 import Contacts from '../contacts/contacts';
 import Navbar from '../../components/navbar';
 
+import './style.css';
+
 class AllFriends extends Component {
     constructor() {
         super();

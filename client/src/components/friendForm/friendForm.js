@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import cloudinary from 'cloudinary-react';
+
 //database
 import db from '../../database/database';
 
@@ -15,6 +17,7 @@ class Form extends Component {
             date: '',
             notes: '',
             image: '',
+            public_id: '',
             lowercaseName: '',
             invalidName: false,
             isSubmitted: false
@@ -70,8 +73,10 @@ class Form extends Component {
         (error, result) => {
             if(error) {console.log(error)}
             else {
+                console.log(result[0])
                 this.setState({
-                    image: result[0].url
+                    image: result[0].url,
+                    public_id: result[0].public_id
                 })
             }
         });
@@ -81,6 +86,8 @@ class Form extends Component {
         this.setState({
             image: ''
         })
+        // window.cloudinary.destroy('eghctwwaan1yvvjz8kj7', function(error,result) {
+        //     console.log(result, error) });
     }
 
     render() {
