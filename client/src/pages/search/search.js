@@ -43,20 +43,6 @@ class Search extends Component {
             <div>
                 <Navbar currentPage='search' />
             <div className='container search'>
-                {/* <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-                    <input class="form-control" id='search' value={this.state.search} onChange={this.onChange} type="text" placeholder="Search" aria-label="Search" />
-                </div> */}
-                {/* <div className='row'>
-                    <form className="form-inline">
-                        <div className='col-9'>
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id='search' value={this.state.search} onChange={this.onChange}/>
-                        </div>
-                        <div className='col-3'>
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={this.onClick}>Search</button>
-                        </div>
-                    </form>
-                </div> */}
-
                 <div className="input-group mb-3">
                     <div className="input-group-prepend">
                         <button id='searchToggle' className="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{this.state.criteria}</button>

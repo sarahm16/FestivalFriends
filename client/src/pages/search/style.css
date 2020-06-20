@@ -1,9 +1,11 @@
 #submitSearch {
-    background-color: rgba(0, 128, 128, 0.637);
+    /* background-color: rgba(0, 128, 128, 0.637); */
+    background-color: rgb(255, 207, 117, 0.9);
     border-radius: 2px;
     border: 0px;
     color: white;
     padding: 0px 10px 0px 10px;
+    height: 38px;
 }
 
 #searchToggle {
