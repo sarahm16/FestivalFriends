@@ -52,6 +52,13 @@ h4 {
     color: white;
 }
 
+.phone,
+.date {
+    background-color: gold;
+    border-radius: 30px;
+    padding: 5px 5px 5px 10px;
+}
+
 .rainbow-text {
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
     background-clip: text;

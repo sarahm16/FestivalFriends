@@ -108,15 +108,15 @@ class Contact extends Component {
                                 />
                                 <div className='festival'><h3>{this.state.festival}</h3></div>
                             </div>}
-                            
+
                             <div className='row'>
-                                    {/* Festival: {this.state.festival} <br />                                 */}
-                                    <div className='col-6'>Ph: {this.state.phone}</div>
-                                    <div className='col-6'>Date: {this.state.date}</div>                                
+                                <div className='col-12 notes'>{this.props.notes}</div>
                             </div>
                             
                             <div className='row'>
-                                <div className='col-12 notes'>Notes: {this.props.notes}</div>
+                                    {/* Festival: {this.state.festival} <br />                                 */}
+                                    <div className='col-6'><p className='phone'><i className="fas fa-phone"></i> {this.state.phone}</p></div>
+                                    <div className='col-6'><p className='date'><i className="far fa-calendar-alt"></i> {this.state.date}</p></div>                                
                             </div>
                         </div>
                     </div>}
