@@ -45,6 +45,13 @@ h4 {
     margin-top: 10px;
 }
 
+.festival {
+    width: 100%;
+    background-color: orange;
+    text-align: center;
+    color: white;
+}
+
 .rainbow-text {
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
     background-clip: text;

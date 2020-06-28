@@ -79,7 +79,8 @@ class Contacts extends Component {
                             name={contact.name}
                             festival={contact.festival}
                             notes={contact.notes}
-                            phone={contact.phone} />
+                            phone={contact.phone}
+                            date={contact.date} />
                     })}                    
                 </div>
             </div>

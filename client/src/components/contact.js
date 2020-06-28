@@ -49,7 +49,8 @@ class Contact extends Component {
             this.setState({notes: this.props.notes})
         }
         this.setState({
-            name: this.props.name
+            name: this.props.name,
+            date: this.props.date
         })
     }
 
@@ -99,11 +100,15 @@ class Contact extends Component {
                     {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">
                             {this.props.image !== '' && <div className='row'>
-                                <img src={this.props.image} alt='pic' style={{width: '100%', height: '75%'}}/>
+                                <img src={this.props.image} alt='pic' style={{width: '100%', height: '75%'}}
+                                />
+                                <div className='festival'><h3>{this.state.festival}</h3></div>
                             </div>}
+                            
                             <div className='row'>
-                                    Festival: {this.state.festival} <br />                                
-                                    Phone: {this.state.phone}                                
+                                    {/* Festival: {this.state.festival} <br />                                 */}
+                                    <div className='col-6'>Ph: {this.state.phone}</div>
+                                    <div className='col-6'>Date: {this.state.date}</div>                                
                             </div>
                             
                             <div className='row'>
