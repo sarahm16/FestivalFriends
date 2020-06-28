@@ -5,7 +5,7 @@ import db from '../database/database';
 import Form from './friendForm/friendForm';
 
 class Contact extends Component {
-    constructor() {
+    constructor(props) {
         super();
         this.state={
             show: false,
@@ -13,6 +13,7 @@ class Contact extends Component {
             festival: 'Festival',
             name: '',
             notes: 'Notes',
+            image: props.image,
             edit: false
         }
     }

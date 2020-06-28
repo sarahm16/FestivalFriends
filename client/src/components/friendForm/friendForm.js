@@ -135,7 +135,17 @@ class Form extends Component {
                     
                     {this.state.image !== '' &&
                         <div className='thumbnail'><img
-                            src={this.state.image}
+                            src={this.props.image}
+                            // src='https://res.cloudinary.com/sarahm16/image/upload/v1592606251/dxu6wdn3kyzzdiavjyyl.jpg' 
+                            alt='thumbnail'
+                            style={{width: '150px'}}
+                        />
+                        <button id='x' className='btn btn-danger' onClick={this.removeImage}>X</button>
+                    </div>}
+
+                    {this.props.edit !== false &&
+                        <div className='thumbnail'><img
+                            src={this.props.placeholders.image}
                             // src='https://res.cloudinary.com/sarahm16/image/upload/v1592606251/dxu6wdn3kyzzdiavjyyl.jpg' 
                             alt='thumbnail'
                             style={{width: '150px'}}
