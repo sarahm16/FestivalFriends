@@ -55,7 +55,7 @@ class Contact extends Component {
         })
     }
 
-    onClick = (button) => {
+    delete = () => {
         db.friends.delete(this.props.id)
         window.location.reload(); 
     }
@@ -87,12 +87,12 @@ class Contact extends Component {
                                     {this.props.name}
                                 </button>
                             </div>
-                            <div className='col-4 text-right'>
-                                <button onClick={this.edit} className='edit'>
+                            <div className='col-4 text-right btn-group'>
+                                <button onClick={this.edit} className='edit btn'>
                                     <i className="fas fa-edit"></i>
                                 </button>
 
-                                <button onClick={() => this.onClick('delete')} className='delete'>
+                                <button onClick={this.delete} className='delete btn'>
                                     <i className="fas fa-trash-alt delete-icon"></i>
                                 </button>
                             </div>
