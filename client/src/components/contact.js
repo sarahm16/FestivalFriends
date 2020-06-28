@@ -9,13 +9,34 @@ class Contact extends Component {
         super();
         this.state={
             show: false,
-            phone: 'No phone number saved',
-            festival: 'No festival saved',
+            phone: 'Phone',
+            festival: 'Festival',
+            name: '',
+            notes: 'Notes',
             edit: false
         }
     }
 
+    // checkEmptyString = (field) => {
+    //     console.log(this.props.phone)
+    //     if(this.props.field !== '') {
+    //         this.setState({
+    //             [field]: this.props.field
+    //         })
+    //     }
+    // }
+
     componentDidMount() {
+
+        //this.checkEmptyString('phone');
+
+        // this.setState({
+        //     phone: this.props.phone,
+        //     festival: this.props.festival,
+        //     notes: this.props.notes,
+        //     name: this.props.name
+        // })
+
         if(this.props.phone !== '') {
             this.setState({
                 phone: this.props.phone
@@ -24,6 +45,12 @@ class Contact extends Component {
         if(this.props.festival !== '') {
             this.setState({festival: this.props.festival})
         }
+        if(this.props.notes !== '') {
+            this.setState({notes: this.props.notes})
+        }
+        this.setState({
+            name: this.props.name
+        })
     }
 
     onClick = (button) => {
@@ -44,6 +71,7 @@ class Contact extends Component {
     }
 
     render() {
+        console.log(this.state.name)
         return(
             <div>
                 <div className="card">
@@ -66,7 +94,7 @@ class Contact extends Component {
                         </div>
                     </div>
 
-                    {this.state.edit && <Form placeholders=''/>}
+                    {this.state.edit && <Form placeholders={this.state}/>}
 
                     {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">

@@ -67,7 +67,7 @@ class Contacts extends Component {
                             </div>
                         </div>
 
-                        {this.state.show && <Form />}                       
+                        {this.state.show && <Form edit={false}/>}                       
                     </div>
 
                     {/* create contact component for each object in array */}
