@@ -2,28 +2,17 @@ import React, { Component } from 'react';
 
 import db from '../database/database';
 
+import Form from './friendForm/friendForm';
+
 class Contact extends Component {
     constructor() {
         super();
         this.state={
             show: false,
             phone: 'No phone number saved',
-            festival: 'No festival saved'
+            festival: 'No festival saved',
+            edit: false
         }
-    }
-
-    onClick = (button) => {
-        if(button === 'delete') {
-            db.friends.delete(this.props.id)
-            window.location.reload();
-        }
-        else {
-            console.log('edited a photo')
-        } 
-    }
-
-    toggle = () => {
-        this.setState({show: !this.state.show})
     }
 
     componentDidMount() {
@@ -35,6 +24,23 @@ class Contact extends Component {
         if(this.props.festival !== '') {
             this.setState({festival: this.props.festival})
         }
+    }
+
+    onClick = (button) => {
+        db.friends.delete(this.props.id)
+        window.location.reload(); 
+    }
+
+    edit = () => {
+        console.log('edited photo')
+        this.setState({
+            edit: !this.state.edit,
+            show: false
+        })
+    }
+
+    toggle = () => {
+        this.setState({show: !this.state.show})
     }
 
     render() {
@@ -49,7 +55,7 @@ class Contact extends Component {
                                 </button>
                             </div>
                             <div className='col-4 text-right'>
-                                <button onClick={() => this.onClick('edit')} className='edit'>
+                                <button onClick={this.edit} className='edit'>
                                     <i className="fas fa-edit"></i>
                                 </button>
 
@@ -59,6 +65,8 @@ class Contact extends Component {
                             </div>
                         </div>
                     </div>
+
+                    {this.state.edit && <Form placeholders=''/>}
 
                     {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">
