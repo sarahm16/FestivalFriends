@@ -12,9 +12,14 @@ class Contact extends Component {
         }
     }
 
-    onClick = () => {
-        db.friends.delete(this.props.id)
-        window.location.reload();
+    onClick = (button) => {
+        if(button === 'delete') {
+            db.friends.delete(this.props.id)
+            window.location.reload();
+        }
+        else {
+            console.log('edited a photo')
+        } 
     }
 
     toggle = () => {
@@ -38,13 +43,17 @@ class Contact extends Component {
                 <div className="card">
                     <div className="card-header" id="headingOne">
                         <div className='row'>
-                            <div className="col-10 text-left">
+                            <div className="col-8 text-left">
                                 <button onClick={this.toggle} className="btn" aria-expanded="true" >
                                     {this.props.name}
                                 </button>
                             </div>
-                            <div className='col-2 text-right'>
-                                <button onClick={this.onClick} className='delete'>
+                            <div className='col-4 text-right'>
+                                <button onClick={() => this.onClick('edit')} className='edit'>
+                                    <i className="fas fa-edit"></i>
+                                </button>
+
+                                <button onClick={() => this.onClick('delete')} className='delete'>
                                     <i className="fas fa-trash-alt delete-icon"></i>
                                 </button>
                             </div>

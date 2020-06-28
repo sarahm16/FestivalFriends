@@ -4,8 +4,13 @@
     margin-bottom: 10px;
 }
 
-.delete {
+.delete, .edit {
     border: none;
+    display: inline;
+}
+
+.delete {
+    margin-left: 10px;
 }
 
 .delete-icon {
