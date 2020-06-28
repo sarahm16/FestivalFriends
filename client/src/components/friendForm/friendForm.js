@@ -91,8 +91,10 @@ class Form extends Component {
     }
 
     render() {
+        let addText;
         console.log(this.props.placeholders)
         console.log(this.props.edit)
+        this.props.edit !== false ?  addText='Save Changes' : addText='Add Friend';
         return(
         <div aria-labelledby="headingOne">
             <div className="card-body">
@@ -132,20 +134,20 @@ class Form extends Component {
                     </textarea>
                     
                     {this.state.image !== '' &&
-                    <div className='thumbnail'><img
-                        src={this.state.image}
-                        // src='https://res.cloudinary.com/sarahm16/image/upload/v1592606251/dxu6wdn3kyzzdiavjyyl.jpg' 
-                        alt='thumbnail'
-                        style={{width: '150px'}}
-                    />
-                    <button id='x' className='btn btn-danger' onClick={this.removeImage}>X</button>
+                        <div className='thumbnail'><img
+                            src={this.state.image}
+                            // src='https://res.cloudinary.com/sarahm16/image/upload/v1592606251/dxu6wdn3kyzzdiavjyyl.jpg' 
+                            alt='thumbnail'
+                            style={{width: '150px'}}
+                        />
+                        <button id='x' className='btn btn-danger' onClick={this.removeImage}>X</button>
                     </div>}
                     
                     <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
                     <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}
                         style={{
                             opacity: this.state.image==='' ? '30%' : '100%'}}
-                    >Add Friend</button>
+                    >{addText}</button>
                 </form>
                 
                 {this.state.invalidName && <div className="alert alert-danger" role="alert">
