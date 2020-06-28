@@ -68,7 +68,10 @@ class Contact extends Component {
     }
 
     toggle = () => {
-        this.setState({show: !this.state.show})
+        this.setState({
+            show: !this.state.show,
+            edit: false
+        })
     }
 
     render() {
