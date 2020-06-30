@@ -86,7 +86,7 @@ class Form extends Component {
         window.cloudinary.openUploadWidget({ 
             cloud_name: 'sarahm16', 
             upload_preset: 'gvezom1v', 
-            sources: ['camera'],
+            sources: ['camera', 'local'],
             cropping: true,
             multiple: false
         },
@@ -166,6 +166,8 @@ class Form extends Component {
                         />
                         <button id='x' className='btn btn-danger' onClick={this.removeImage}>X</button>
                     </div>}
+
+                    <input type="file" accept="image/*" capture></input>
                     
                     <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
                     <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}
