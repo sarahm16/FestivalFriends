@@ -42,8 +42,8 @@ h4 {
 
 .notes {
     background-color: rgba(211, 211, 211, 0.493);
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 15px;
+    padding: 10px 20px 10px 20px;
 }
 
 .festival {
@@ -59,6 +59,10 @@ h4 {
     background-color: gold;
     border-radius: 30px;
     padding: 5px 6px 5px 6px;
+}
+
+.phone-date-row {
+    margin-top: 15px;
 }
 
 .rainbow-text {
