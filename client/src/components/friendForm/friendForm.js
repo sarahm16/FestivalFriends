@@ -83,9 +83,12 @@ class Form extends Component {
     }
 
     removeImage = () => {
+        // this.props.edit ? db.friends.where('image').equals(this.state.image).modify({image: ''}) :
         this.setState({
             image: ''
         })
+        
+
         // window.cloudinary.destroy('eghctwwaan1yvvjz8kj7', function(error,result) {
         //     console.log(result, error) });
     }

@@ -18,37 +18,20 @@ class Contact extends Component {
         }
     }
 
-    // checkEmptyString = (field) => {
-    //     console.log(this.props.phone)
-    //     if(this.props.field !== '') {
-    //         this.setState({
-    //             [field]: this.props.field
-    //         })
-    //     }
-    // }
+    checkEmptyString = (field) => {
+        if(field !== '') {
+            this.setState({[field]: field})
+        }
+    }
 
     componentDidMount() {
 
-        //this.checkEmptyString('phone');
+        const { phone, festival, notes } = this.props
+        //console.log('phone: ' + phone)
+        this.checkEmptyString(phone);
+        this.checkEmptyString(notes);
+        this.checkEmptyString(festival);
 
-        // this.setState({
-        //     phone: this.props.phone,
-        //     festival: this.props.festival,
-        //     notes: this.props.notes,
-        //     name: this.props.name
-        // })
-
-        if(this.props.phone !== '') {
-            this.setState({
-                phone: this.props.phone
-            })
-        }
-        if(this.props.festival !== '') {
-            this.setState({festival: this.props.festival})
-        }
-        if(this.props.notes !== '') {
-            this.setState({notes: this.props.notes})
-        }
         this.setState({
             name: this.props.name,
             date: this.props.date
@@ -69,7 +52,6 @@ class Contact extends Component {
     }
 
     toggle = () => {
-        
         this.state.edit ? this.setState({edit:false}) : this.setState({
             show: !this.state.show,
             edit: false
@@ -100,7 +82,7 @@ class Contact extends Component {
                         </div>
                     </div>
 
-                    {this.state.edit && <Form placeholders={this.state}/>}
+                    {this.state.edit && <Form placeholders={this.state} edit={true}/>}
 
                     {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">
