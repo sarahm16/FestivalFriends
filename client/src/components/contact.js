@@ -27,7 +27,6 @@ class Contact extends Component {
 
     componentDidMount() {
         const { phone, festival, notes, name, date } = this.props;
-        //if(phone !== '') {this.setState({phone: phone})}
         this.setState({
             phone: phone,
             festival: festival,

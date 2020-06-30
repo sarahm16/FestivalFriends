@@ -24,6 +24,21 @@ class Form extends Component {
         }
     }
 
+    componentDidMount() {
+        const { festival, date, phone, notes, name } = this.props.placeholders;
+        if(this.props.edit) {
+            console.log('mounted component, edited true');
+            console.log(this.props.placeholders);
+            this.setState({
+                name: name,
+                date: date,
+                festival: festival,
+                phone: phone,
+                notes: notes
+            })
+        }
+    }
+
     onChange = (event) => {
         this.setState({
             [event.target.id]: event.target.value,
@@ -94,24 +109,24 @@ class Form extends Component {
     }
 
     render() {
-        const { festival, date, phone, notes, name } = this.props.placeholders;
+        const { festival, date, phone, notes, name } = this.state;
         let addText;
-        console.log(this.props.placeholders.festival)
-        this.props.edit !== false ?  addText='Save Changes' : addText='Add Friend';
+        this.props.edit ?  addText='Save Changes' : addText='Add Friend';
         return(
         <div aria-labelledby="headingOne">
             <div className="card-body">
                 <form>
                     <div className="form-group">
                         <input type="text" className="form-control" id="name" 
-                        placeholder={this.props.edit !== false && name !== '' ? name : 'Name'}
+                        placeholder={this.props.edit && name !== '' ? name : 'Name'}
                         onChange={this.onChange}
                         value={this.state.name}/>
                     </div>
+
                     <div className='form-row'>
                         <div className='form-group col-6'>
                             <input type="text" className="form-control" id="phone"
-                            placeholder={this.props.edit !== false && phone !== '' ? phone : "Phone"}
+                            placeholder={this.props.edit && phone !== '' ? phone : "Phone"}
                             onChange={this.onChange}
                             value={this.state.phone}/>
                         </div>
@@ -122,15 +137,16 @@ class Form extends Component {
                             value={this.state.date}/>
                         </div>
                     </div>
+                    
                     <div className="form-group">
                         <input type="text" className="form-control" id="festival"
-                        placeholder={this.props.edit !== false && festival !== '' ? festival : "Festival"}
+                        placeholder={this.props.edit && festival !== '' ? festival : "Festival"}
                         onChange={this.onChange}
                         value={this.state.festival}/>
                     </div>
                 
                     <textarea className='notes form-control' id='notes'
-                        placeholder={this.props.edit !== false ? this.props.placeholders.notes : 'Notes'}
+                        placeholder={this.props.edit !== false && notes !== '' ? notes : 'Notes'}
                         onChange={this.onChange}
                         //value={this.state.edit !== false ? this.props.placeholders.notes : this.state.notes}
                         value={this.state.notes}>
