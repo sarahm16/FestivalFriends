@@ -26,6 +26,7 @@ class Contact extends Component {
     }
 
     componentDidMount() {
+        //put this in the constructor?
         const { phone, festival, notes, name, date } = this.props;
         this.setState({
             phone: phone,

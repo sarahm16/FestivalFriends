@@ -25,8 +25,9 @@ class Form extends Component {
     }
 
     componentDidMount() {
-        const { festival, date, phone, notes, name } = this.props.placeholders;
+        
         if(this.props.edit) {
+            const { festival, date, phone, notes, name, image } = this.props.placeholders;
             console.log('mounted component, edited true');
             console.log(this.props.placeholders);
             this.setState({
@@ -34,7 +35,8 @@ class Form extends Component {
                 date: date,
                 festival: festival,
                 phone: phone,
-                notes: notes
+                notes: notes,
+                image: image
             })
         }
     }
@@ -137,7 +139,7 @@ class Form extends Component {
                             value={this.state.date}/>
                         </div>
                     </div>
-                    
+
                     <div className="form-group">
                         <input type="text" className="form-control" id="festival"
                         placeholder={this.props.edit && festival !== '' ? festival : "Festival"}
@@ -154,7 +156,7 @@ class Form extends Component {
                     
                     {this.state.image !== '' &&
                         <div className='thumbnail'><img
-                            src={this.props.image}
+                            src={this.state.image}
                             // src='https://res.cloudinary.com/sarahm16/image/upload/v1592606251/dxu6wdn3kyzzdiavjyyl.jpg' 
                             alt='thumbnail'
                             style={{width: '150px'}}
@@ -162,7 +164,7 @@ class Form extends Component {
                         <button id='x' className='btn btn-danger' onClick={this.removeImage}>X</button>
                     </div>}
 
-                    {this.props.edit !== false &&
+                    {/* {this.props.edit !== false &&
                         <div className='thumbnail'><img
                             src={this.props.placeholders.image}
                             // src='https://res.cloudinary.com/sarahm16/image/upload/v1592606251/dxu6wdn3kyzzdiavjyyl.jpg' 
@@ -170,7 +172,7 @@ class Form extends Component {
                             style={{width: '150px'}}
                         />
                         <button id='x' className='btn btn-danger' onClick={this.removeImage}>X</button>
-                    </div>}
+                    </div>} */}
                     
                     <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
                     <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}
