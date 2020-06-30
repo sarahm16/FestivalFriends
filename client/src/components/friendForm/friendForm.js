@@ -86,7 +86,7 @@ class Form extends Component {
         window.cloudinary.openUploadWidget({ 
             cloud_name: 'sarahm16', 
             upload_preset: 'gvezom1v', 
-            sources: ['camera', 'local'],
+            sources: ['camera'],
             cropping: true,
             multiple: false
         },
