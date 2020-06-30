@@ -11,6 +11,7 @@ class Form extends Component {
     constructor() {
         super();
         this.state={
+            id: '',
             name: '',
             phone: '',
             festival: '',
@@ -25,11 +26,8 @@ class Form extends Component {
     }
 
     componentDidMount() {
-        
         if(this.props.edit) {
             const { festival, date, phone, notes, name, image } = this.props.placeholders;
-            console.log('mounted component, edited true');
-            console.log(this.props.placeholders);
             this.setState({
                 name: name,
                 date: date,
@@ -51,11 +49,16 @@ class Form extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
 
+        //delete previous contact if in edit mode, create new contact with edited info
+        if(this.props.edit) {
+            db.friends.delete(this.props.id)
+        }
+
         if(this.state.name==='') {
             this.setState({
                 invalidName: true
             })
-        } else { 
+        } else {
             //generate random id
             let id = Math.floor(Math.random() * 10000000000000)            
 
@@ -163,16 +166,6 @@ class Form extends Component {
                         />
                         <button id='x' className='btn btn-danger' onClick={this.removeImage}>X</button>
                     </div>}
-
-                    {/* {this.props.edit !== false &&
-                        <div className='thumbnail'><img
-                            src={this.props.placeholders.image}
-                            // src='https://res.cloudinary.com/sarahm16/image/upload/v1592606251/dxu6wdn3kyzzdiavjyyl.jpg' 
-                            alt='thumbnail'
-                            style={{width: '150px'}}
-                        />
-                        <button id='x' className='btn btn-danger' onClick={this.removeImage}>X</button>
-                    </div>} */}
                     
                     <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
                     <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}

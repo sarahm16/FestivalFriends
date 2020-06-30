@@ -27,8 +27,10 @@ class Contact extends Component {
 
     componentDidMount() {
         //put this in the constructor?
-        const { phone, festival, notes, name, date } = this.props;
+        console.log('id: ' + this.props.id)
+        const { phone, festival, notes, name, date, id } = this.props;
         this.setState({
+            id: id,
             phone: phone,
             festival: festival,
             notes: notes,
@@ -80,7 +82,7 @@ class Contact extends Component {
                         </div>
                     </div>
 
-                    {this.state.edit && <Form placeholders={this.state} edit={true}/>}
+                    {this.state.edit && <Form placeholders={this.state} id={this.state.id} edit={true}/>}
 
                     {this.state.show && <div  aria-labelledby="headingOne">
                         <div className="card-body">
