@@ -9,10 +9,10 @@ class Contact extends Component {
         super();
         this.state={
             show: false,
-            phone: 'Phone',
-            festival: 'Festival',
+            phone: '',
+            festival: '',
             name: '',
-            notes: 'Notes',
+            notes: '',
             image: props.image,
             edit: false
         }
@@ -22,19 +22,18 @@ class Contact extends Component {
         if(field !== '') {
             this.setState({[field]: field})
         }
+        //field !== '' ? this.setState({[field]: field}) : this.setState({[field]: field.toString()})
     }
 
     componentDidMount() {
-
-        const { phone, festival, notes } = this.props
-        //console.log('phone: ' + phone)
-        this.checkEmptyString(phone);
-        this.checkEmptyString(notes);
-        this.checkEmptyString(festival);
-
+        const { phone, festival, notes, name, date } = this.props;
+        //if(phone !== '') {this.setState({phone: phone})}
         this.setState({
-            name: this.props.name,
-            date: this.props.date
+            phone: phone,
+            festival: festival,
+            notes: notes,
+            name: name,
+            date: date
         })
     }
 
@@ -44,7 +43,6 @@ class Contact extends Component {
     }
 
     edit = () => {
-        console.log('edited photo')
         this.setState({
             edit: !this.state.edit,
             show: false
