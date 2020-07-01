@@ -59,8 +59,8 @@ class Contacts extends Component {
                     <div className="card">
                         <div className="card-header" id="headingOne">
                             <div className='row'>
-                                <div className="col-12">
-                                    <button onClick={this.toggle} className="btn btn-link add-contact" data-toggle="collapse" data-target='#collapseOne' aria-expanded="true" aria-controls="collapseOne">
+                                <div className="col-12 add-contact">
+                                    <button onClick={this.toggle} className="btn btn-link" data-toggle="collapse" data-target='#collapseOne' aria-expanded="true" aria-controls="collapseOne">
                                         <i className="fas fa-plus-circle add-icon"></i> Add Friend
                                     </button>
                                 </div>
