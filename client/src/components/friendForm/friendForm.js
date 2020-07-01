@@ -130,7 +130,7 @@ class Form extends Component {
 
                     <div className='form-row'>
                         <div className='form-group col-6'>
-                            <input type='text' inputmode='numeric' className="form-control" id="phone"
+                            <input type="tel" pattern="^\d{2}-\d{3}$" className="form-control" id="phone"
                             placeholder={this.props.edit && phone !== '' ? phone : "Phone"}
                             onChange={this.onChange}
                             value={this.state.phone}/>
