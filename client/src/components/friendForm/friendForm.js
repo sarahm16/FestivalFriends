@@ -130,7 +130,7 @@ class Form extends Component {
 
                     <div className='form-row'>
                         <div className='form-group col-6'>
-                            <input type="text" className="form-control" id="phone"
+                            <input inputmode='numeric' className="form-control" id="phone"
                             placeholder={this.props.edit && phone !== '' ? phone : "Phone"}
                             onChange={this.onChange}
                             value={this.state.phone}/>
@@ -167,7 +167,7 @@ class Form extends Component {
                         <button id='x' className='btn btn-danger' onClick={this.removeImage}>X</button>
                     </div>}
 
-                    <input type="file" accept="image/*" capture></input>
+                    {/* <input type="file" accept="image/*" capture></input> */}
                     
                     <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
                     <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}
