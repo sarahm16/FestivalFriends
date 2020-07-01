@@ -47,7 +47,7 @@ class Form extends Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
+        event.preventDefault();
 
         //delete previous contact if in edit mode, create new contact with edited info
         if(this.props.edit) {

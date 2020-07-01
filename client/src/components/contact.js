@@ -99,7 +99,7 @@ class Contact extends Component {
                             }
 
                             <div className='row phone-date-row'>
-                                <div className='col-6'><p className='phone'><a href={`tel:1${this.state.phone}`}><i className="fas fa-phone"></i> {this.state.phone}</a></p></div>
+                                <div className='col-6'><p className='phone'><a id='phone' href={`tel:1${this.state.phone}`}><i className="fas fa-phone"></i> {this.state.phone}</a></p></div>
                                 <div className='col-6'><p className='date'><i className="far fa-calendar-alt"></i> {this.state.date}</p></div>                                
                             </div>
                         </div>
