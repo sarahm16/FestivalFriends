@@ -52,7 +52,9 @@ class Contact extends Component {
     }
 
     toggle = () => {
-        this.state.edit ? this.setState({edit:false}) : this.setState({
+        this.state.edit ? this.setState({
+            edit:false
+        }) : this.setState({
             show: !this.state.show,
             edit: false
         })
@@ -66,7 +68,7 @@ class Contact extends Component {
                     <div className="card-header" id="headingOne">
                         <div className='row'>
                             <div className="col-8 text-left">
-                                <button onClick={this.toggle} className="btn" aria-expanded="true" >
+                                <button style={{color: this.state.show ? '#ffb84d' : 'black'}} onClick={this.toggle} className="btn" id={this.state.selected} aria-expanded="true" >
                                     {this.props.name}
                                 </button>
                             </div>
