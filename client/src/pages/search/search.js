@@ -64,8 +64,8 @@ class Search extends Component {
                 </div>
             </div>
 
-                {!this.state.isSubmitted && <Contacts search=''/>}
-                {this.state.isSubmitted && <Contacts search={this.state.search} criteria={this.state.criteria} />}
+                {!this.state.isSubmitted && <Contacts search='' sort='alphabetical' />}
+                {this.state.isSubmitted && <Contacts search={this.state.search} sort='alphabetical' criteria={this.state.criteria} />}
             </div>
             
         )
