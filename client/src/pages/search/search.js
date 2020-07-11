@@ -47,8 +47,8 @@ class Search extends Component {
         return(
             <div>
                 <Navbar currentPage='search' />
-            <div className='container search'>
-                <div className="input-group mb-3">
+            <div className='search pb-0'>
+                <div className="input-group mb-0 pb-0">
                     <div className="input-group-prepend">
                         <button id='searchToggle' className="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{this.state.criteria}</button>
                         <div className="dropdown-menu">
