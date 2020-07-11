@@ -55,7 +55,7 @@ class Contacts extends Component {
     render() {
         return(
             <div>
-                <div className='container contacts'>
+                <div className='contacts'>
                     <div className="card">
                         <div className="card-header" id="headingOne">
                             <div className='row'>

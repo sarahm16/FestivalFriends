@@ -24,7 +24,7 @@ class Sort extends Component {
         return(
             <div>                
                 <Navbar currentPage='all' />
-                <div className='container'>
+                <div className='sort-menu'>
                     <select value={this.state.sort} onChange={this.onChange} id='sort' className="form-control form-control-sm">
                         <option value='festival'>By Festival</option>
                         <option value='alphabetical'>Alphabetically</option>

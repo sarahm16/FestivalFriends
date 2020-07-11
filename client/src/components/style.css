@@ -1,7 +1,6 @@
 .navbar {
     width: 100%;
     margin-bottom: 0px;
-    margin-bottom: 10px;
 }
 
 .delete, .edit {
@@ -77,8 +76,12 @@ h4 {
     text-decoration: none;
 }
 
-.rainbow-text {
+/* .rainbow-text {
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
     background-clip: text;
     color: transparent;
+} */
+
+.rainbow-text {
+    color: rgb(179, 98, 0)
 }

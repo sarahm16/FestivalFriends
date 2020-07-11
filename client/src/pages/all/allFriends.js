@@ -21,7 +21,7 @@ class AllFriends extends Component {
         return(
             <div>
                 <Navbar currentPage='all' />
-                <div className='container'>
+                <div>
                     <select value={this.state.sort} onChange={this.onChange} id='sort' className="form-control form-control-sm">
                         <option value='alphabetical'>Alphabetically</option>
                         <option value='festival'>By Festival</option>
