@@ -10,7 +10,7 @@ class Add extends Component {
     render() {
         return(
             <div>
-                <Navbar />
+                <Navbar currentPage='add' />
                 <div className='bg'></div>
                 <div className='form'>
                     <Form />
