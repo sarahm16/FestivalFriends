@@ -123,39 +123,40 @@ class Form extends Component {
             <div className="card-body form-bg">
                 <form>
                     <div className="form-group">
-                        <input type="text" className="form-control" id="name" 
+                        <input type="text" className={this.props.edit ? "form-control" : "form-control form-control-lg"} id="name" 
                         placeholder={this.props.edit && name !== '' ? name : 'Name'}
                         onChange={this.onChange}
                         value={this.state.name}
-                        style={{height: this.state.inputHeight}}/>
+                        />
                     </div>
 
                     <div className='form-row'>
                         <div className='form-group col-6'>
-                            <input type="tel" pattern="^\d{2}-\d{3}$" className="form-control" id="phone"
+                            <input type="tel" pattern="^\d{2}-\d{3}$" className={this.props.edit ? "form-control" : "form-control form-control-lg"} id="phone"
                             placeholder={this.props.edit && phone !== '' ? phone : "Phone"}
                             onChange={this.onChange}
                             value={this.state.phone}
-                            style={{height: this.state.inputHeight}}/>
+                            />
                         </div>
                         <div className='form-group col-6'>
-                            <input type='date' className="form-control" id="date"
+                            <input type='date' className={this.props.edit ? "form-control" : "form-control form-control-lg"} id="date"
                             // placeholder={this.props.edit !== false && date !== '' ? date : "Date"}
                             onChange={this.onChange}
                             value={this.state.date}
-                            style={{height: this.state.inputHeight}}/>
+                            />
                         </div>
                     </div>
 
                     <div className="form-group">
-                        <input type="text" className="form-control" id="festival"
+                        <input type="text" className={this.props.edit ? "form-control" : "form-control form-control-lg"} id="festival"
                         placeholder={this.props.edit && festival !== '' ? festival : "Festival"}
                         onChange={this.onChange}
                         value={this.state.festival}
-                        style={{height: this.state.inputHeight}}/>
+                        />
                     </div>
                 
-                    <textarea className='notes-field form-control' 
+                    <textarea className={this.props.edit ? "form-control" : "form-control form-control-lg"}
+                        id='notes-field' 
                         placeholder={this.props.edit !== false && notes !== '' ? notes : 'Notes'}
                         onChange={this.onChange}
                         value={this.state.notes}>
