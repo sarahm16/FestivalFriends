@@ -6,7 +6,7 @@ import './style.css';
 function Navbar(props) {
     
     return(
-        <nav className='navbar navbar-light bg-light'>
+        <nav className='navbar navbar-light bg-dark'>
             <ul className='nav nav-tabs w-100'>
                 <li><h4 className='rainbow-text'>FestivalFriends</h4></li>
 

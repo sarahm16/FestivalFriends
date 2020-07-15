@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-import Dashboard from './pages/dashboard/dashboard';
 import Contacts from './pages/contacts/contacts';
 import Search from './pages/search/search';
 import Sort from './pages/sort/sort';
