@@ -155,7 +155,7 @@ class Form extends Component {
                         style={{height: this.state.inputHeight}}/>
                     </div>
                 
-                    <textarea className='notes form-control' id='notes'
+                    <textarea className='notes form-control' 
                         placeholder={this.props.edit !== false && notes !== '' ? notes : 'Notes'}
                         onChange={this.onChange}
                         value={this.state.notes}>
