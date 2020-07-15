@@ -1,6 +1,8 @@
 .navbar {
     width: 100%;
     margin-bottom: 0px;
+    /* min-height: 80px;     */
+    padding: 0px !important
 }
 
 .delete, .edit {
@@ -20,10 +22,6 @@ h4 {
     padding: 5px 20px 0px 20px;
 }
 
-.navbar {
-    padding: 0px;
-}
-
 .nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
     border-color: #d45500;
     border-bottom-color: transparent;
@@ -37,6 +35,7 @@ h4 {
   }
 .nav-tabs > li > a {
     color: #ffb84d;
+    line-height: 45px;
 }
 
 .card-body {
@@ -87,5 +86,6 @@ h4 {
 } */
 
 .rainbow-text {
-    color: rgb(179, 98, 0)
+    color: rgb(179, 98, 0);
+    padding-top: 15px
 }
