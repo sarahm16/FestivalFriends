@@ -1,7 +1,7 @@
 #submitSearch {
     /* background-color: rgba(0, 128, 128, 0.637); */
     /* background-color: rgb(255, 207, 117, 0.9); */
-    background-color: #ffbf5fe1;
+    background-color: #ffbf5f;
     border-radius: 2px;
     border: 0px;
     color: white;
@@ -11,7 +11,7 @@
 
 #searchToggle {
     color: white;
-    background-color:rgba(128, 128, 128, 0.623);
+    background-color:rgba(128, 128, 128);
 }
 
 .search {

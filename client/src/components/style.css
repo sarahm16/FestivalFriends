@@ -67,14 +67,6 @@ h4 {
     margin-top: 15px;
 }
 
-#selected {
-    color: blue;
-}
-
-#not-selected {
-    color: black;
-}
-
 #phone {
     text-decoration: none;
 }
