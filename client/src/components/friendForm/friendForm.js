@@ -120,7 +120,7 @@ class Form extends Component {
         this.props.edit ?  addText='Save Changes' : addText='Add Friend';
         return(
         <div aria-labelledby="headingOne">
-            <div className="card-body">
+            <div className="card-body form-bg">
                 <form>
                     <div className="form-group">
                         <input type="text" className="form-control" id="name" 
@@ -155,7 +155,7 @@ class Form extends Component {
                         style={{height: this.state.inputHeight}}/>
                     </div>
                 
-                    <textarea className='notes form-control' 
+                    <textarea className='notes-field form-control' 
                         placeholder={this.props.edit !== false && notes !== '' ? notes : 'Notes'}
                         onChange={this.onChange}
                         value={this.state.notes}>
