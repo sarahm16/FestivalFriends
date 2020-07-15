@@ -156,7 +156,7 @@ class Form extends Component {
                     </div>
                 
                     <textarea className={this.props.edit ? "form-control" : "form-control form-control-lg"}
-                        id='notes-field' 
+                        id='notes' 
                         placeholder={this.props.edit !== false && notes !== '' ? notes : 'Notes'}
                         onChange={this.onChange}
                         value={this.state.notes}>

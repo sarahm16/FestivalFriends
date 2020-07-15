@@ -96,7 +96,7 @@ class Contact extends Component {
 
                             {this.props.notes !== '' && 
                                 <div className='row'>
-                                    <div className='col-12' id='notes'>{this.props.notes}</div>
+                                    <div className='col-12 notes'>{this.props.notes}</div>
                                 </div>
                             }
 
