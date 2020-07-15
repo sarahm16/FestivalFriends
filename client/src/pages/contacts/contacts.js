@@ -55,6 +55,7 @@ class Contacts extends Component {
     render() {
         return(
             <div>
+                {this.props.screen && <div className='screen'></div>}
                 <div className='contacts'>
                     {/* <div className="card">
                         <div className="card-header" id="headingOne">

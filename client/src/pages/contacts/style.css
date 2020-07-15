@@ -10,3 +10,27 @@
     margin-top: 10px;
 } */
 
+.screen {
+    background-color: rgba(39, 39, 39, 0.699);
+    z-index: 10;
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+}
+
+.contacts {
+    z-index: 1;
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    width: 100%;
+}
+
+/* .contacts {
+    position: absolute;
+    z-index: -1;
+    top: 60px;
+    left: 0px;
+    margin: 0 auto;
+    width: 100%;
+} */
