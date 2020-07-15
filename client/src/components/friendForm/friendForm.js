@@ -110,13 +110,12 @@ class Form extends Component {
             image: ''
         })
         
-
         // window.cloudinary.destroy('eghctwwaan1yvvjz8kj7', function(error,result) {
         //     console.log(result, error) });
     }
 
     render() {
-        const { festival, date, phone, notes, name } = this.state;
+        const { festival, phone, notes, name } = this.state;
         let addText;
         this.props.edit ?  addText='Save Changes' : addText='Add Friend';
         return(
@@ -174,10 +173,10 @@ class Form extends Component {
 
                     {/* <input type="file" accept="image/*" capture></input> */}
                     
-                    <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget} style={{height: this.state.inputHeight}}><i className="fa fa-image"></i> Upload Photo</button>
-                    <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}
+                    <button className='btn  w-100' id='upload' onClick={this.uploadWidget} style={{height: this.state.inputHeight}}><i className="fa fa-image"></i> Upload Photo</button>
+                    <button className='btn btn-warning w-100' type='submit' onClick={this.handleSubmit}
                         style={{
-                            opacity: this.state.image==='' ? '30%' : '100%',
+                            opacity: this.state.image==='' ? '40%' : '100%',
                             height: this.state.inputHeight
                         }}
                     >{addText}</button>
