@@ -21,13 +21,13 @@ class AllFriends extends Component {
         return(
             <div>
                 <Navbar currentPage='all' />
-                <div>
+                {/* <div>
                     <select value={this.state.sort} onChange={this.onChange} id='sort' className="form-control form-control-sm">
                         <option value='alphabetical'>Alphabetically</option>
                         <option value='festival'>By Festival</option>
                     </select>
                 </div>
-                {this.state.sort==='festival' && <Redirect to='/sort' />}
+                {this.state.sort==='festival' && <Redirect to='/sort' />} */}
                 <Contacts search='' sort='alphabetical' />
             </div>
         )

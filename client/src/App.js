@@ -16,7 +16,7 @@ function App() {
   return (
     // <div className="App" style={{backgroundImage: "url(" + Background + ")", height: '100%'}}>
         <Router>
-          <Route exact path='/' component={Search} />
+          <Route exact path='/' component={AllFriends} />
           <Route exact path='/contacts' component={Contacts} />
           <Route exact path='/search' component={Search} />
           <Route exact path='/sort' component={Sort} />

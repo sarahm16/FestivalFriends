@@ -28,10 +28,12 @@ h4 {
 }
 .nav-tabs {
    border-bottom: 1px solid #d45500;
+   /* border-bottom: 2px solid #db9730 */
 }
 
 .nav-tabs > li.active > a {
     color: #db9730;
+    
   }
 .nav-tabs > li > a {
     color: #ffb84d;
