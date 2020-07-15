@@ -26,19 +26,19 @@ class Contacts extends Component {
         console.log('contacts criteria: ' + this.props.criteria)
         let criteria='';
         if(this.props.search === '') {
-            if(this.props.sort === 'alphabetical') {
+            // if(this.props.sort === 'alphabetical') {
                 //sort contacts from friends db, set to state of component
                 const sortedContacts = await db.friends.orderBy('lowercaseName').toArray()
                 this.setState({
                     contacts: sortedContacts
                 })
-            }
-            else {
-                const sortedContacts = await db.friends.orderBy('lowercaseFestival').toArray();
-                this.setState({
-                    contacts: sortedContacts
-                })
-            }
+            //}
+            // else {
+            //     const sortedContacts = await db.friends.orderBy('lowercaseFestival').toArray();
+            //     this.setState({
+            //         contacts: sortedContacts
+            //     })
+            // }
             
         } else {
             if(this.props.criteria==='Friend') {criteria='name'} else {criteria='festival'}
@@ -56,7 +56,9 @@ class Contacts extends Component {
         return(
             <div>
                 {this.props.screen && <div className='screen'></div>}
-                <div className='contacts'>
+                <div className='contacts'
+                // style={{top: this.props.screen && this.props.search === '' ? '120px' : '64px'}}
+                >
                     {/* <div className="card">
                         <div className="card-header" id="headingOne">
                             <div className='row'>

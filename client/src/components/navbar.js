@@ -18,7 +18,7 @@ function Navbar(props) {
                     <Link to='/add' className={props.currentPage==='add' ? 'nav-link active' : 'nav-link'}><i className="fas fa-plus-circle add-icon"></i></Link>
                 </li>
                 <li className='nav-item ml-auto'>
-                    <Link to='/search' className={props.currentPage==='search' ? 'nav-link active' : 'nav-link'}><i class="fas fa-search"></i></Link>
+                    <Link to='/search' className={props.currentPage==='search' ? 'nav-link active' : 'nav-link'}><i className="fas fa-search"></i></Link>
                 </li>                
             </ul>
         </nav>
