@@ -7,15 +7,15 @@ import Navbar from '../../components/navbar';
 import './style.css';
 
 class AllFriends extends Component {
-    constructor() {
-        super();
-        this.state={
-            sort: 'alphabetical'
-        }
-    }
-    onChange = (event) => {
-        this.setState({[event.target.id]: event.target.value})
-    }
+    // constructor() {
+    //     super();
+    //     this.state={
+    //         sort: 'alphabetical'
+    //     }
+    // }
+    // onChange = (event) => {
+    //     this.setState({[event.target.id]: event.target.value})
+    // }
 
     render() {
         return(
