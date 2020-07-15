@@ -56,7 +56,7 @@ class Contacts extends Component {
         return(
             <div>
                 <div className='contacts'>
-                    <div className="card">
+                    {/* <div className="card">
                         <div className="card-header" id="headingOne">
                             <div className='row'>
                                 <div className="col-12 add-contact">
@@ -68,7 +68,7 @@ class Contacts extends Component {
                         </div>
 
                         {this.state.show && <Form edit={false}/>}                       
-                    </div>
+                    </div> */}
 
                     {/* create contact component for each object in array */}
                     {this.state.contacts.map(contact => {
