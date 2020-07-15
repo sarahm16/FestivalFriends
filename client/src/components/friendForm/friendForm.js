@@ -21,7 +21,8 @@ class Form extends Component {
             public_id: '',
             lowercaseName: '',
             invalidName: false,
-            isSubmitted: false
+            isSubmitted: false,
+            inputHeight: '50px'
         }
     }
 
@@ -34,7 +35,8 @@ class Form extends Component {
                 festival: festival,
                 phone: phone,
                 notes: notes,
-                image: image
+                image: image,
+                inputHeight: ''
             })
         }
     }
@@ -125,7 +127,8 @@ class Form extends Component {
                         <input type="text" className="form-control" id="name" 
                         placeholder={this.props.edit && name !== '' ? name : 'Name'}
                         onChange={this.onChange}
-                        value={this.state.name}/>
+                        value={this.state.name}
+                        style={{height: this.state.inputHeight}}/>
                     </div>
 
                     <div className='form-row'>
@@ -133,13 +136,15 @@ class Form extends Component {
                             <input type="tel" pattern="^\d{2}-\d{3}$" className="form-control" id="phone"
                             placeholder={this.props.edit && phone !== '' ? phone : "Phone"}
                             onChange={this.onChange}
-                            value={this.state.phone}/>
+                            value={this.state.phone}
+                            style={{height: this.state.inputHeight}}/>
                         </div>
                         <div className='form-group col-6'>
                             <input type='date' className="form-control" id="date"
                             // placeholder={this.props.edit !== false && date !== '' ? date : "Date"}
                             onChange={this.onChange}
-                            value={this.state.date}/>
+                            value={this.state.date}
+                            style={{height: this.state.inputHeight}}/>
                         </div>
                     </div>
 
@@ -147,13 +152,13 @@ class Form extends Component {
                         <input type="text" className="form-control" id="festival"
                         placeholder={this.props.edit && festival !== '' ? festival : "Festival"}
                         onChange={this.onChange}
-                        value={this.state.festival}/>
+                        value={this.state.festival}
+                        style={{height: this.state.inputHeight}}/>
                     </div>
                 
                     <textarea className='notes form-control' id='notes'
                         placeholder={this.props.edit !== false && notes !== '' ? notes : 'Notes'}
                         onChange={this.onChange}
-                        //value={this.state.edit !== false ? this.props.placeholders.notes : this.state.notes}
                         value={this.state.notes}>
                     </textarea>
                     
@@ -169,10 +174,12 @@ class Form extends Component {
 
                     {/* <input type="file" accept="image/*" capture></input> */}
                     
-                    <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget}><i className="fa fa-image"></i> Upload Photo</button>
+                    <button className='btn btn-primary w-100' id='upload' onClick={this.uploadWidget} style={{height: this.state.inputHeight}}><i className="fa fa-image"></i> Upload Photo</button>
                     <button className='btn btn-info w-100' type='submit' onClick={this.handleSubmit}
                         style={{
-                            opacity: this.state.image==='' ? '30%' : '100%'}}
+                            opacity: this.state.image==='' ? '30%' : '100%',
+                            height: this.state.inputHeight
+                        }}
                     >{addText}</button>
                 </form>
                 
