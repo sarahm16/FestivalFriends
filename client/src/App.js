@@ -10,7 +10,7 @@ import Form from './components/friendForm/friendForm';
 import Add from './pages/add/add';
 // import Navbar from './components/navbar';
 
-import Background from './images/edc2.jpg';
+//import Background from './images/edc2.jpg';
 
 function App() {
   return (

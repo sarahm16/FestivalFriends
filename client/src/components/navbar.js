@@ -11,7 +11,7 @@ function Navbar(props) {
                 <li><h4 className='rainbow-text'>FestivalFriends</h4></li>
 
                 <li className='nav-item ml-auto'>
-                    <Link to='/search' className={props.currentPage==='search' ? 'nav-link active' : 'nav-link'}><i class="fas fa-users"></i></Link>
+                    <Link to='/search' className={props.currentPage==='search' ? 'nav-link active' : 'nav-link'}><i className="fas fa-users"></i></Link>
                 </li>
                 <li className='nav-item ml-auto all'>
                     {/* <Link to='/all' className={props.currentPage==='all' ? 'nav-link active' : 'nav-link'}>All</Link> */}
