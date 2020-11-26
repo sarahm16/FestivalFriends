@@ -2,9 +2,12 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-import Search from './pages/search/search';
+//import Search from './pages/search/search';
 import AllFriends from './pages/all/allFriends';
-import Add from './pages/add/add';
+//import Add from './pages/add/add';
+
+const Search = React.lazy(() => import('./pages/search/search'));
+const Add = React.lazy(() => import('./pages/add/add'));
 
 function App() {
   return (
