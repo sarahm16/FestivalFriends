@@ -12,12 +12,14 @@ const Add = React.lazy(() => import('./pages/add/add'));
 function App() {
   return (
         <Router>
-          <Route exact path='/' component={AllFriends} />
-          {/* <Route exact path='/contacts' component={Contacts} /> */}
-          <Route exact path='/search' component={Search} />
-          {/* <Route exact path='/sort' component={Sort} /> */}
-          {/* <Route exact path='/all' component={AllFriends} /> */}
-          <Route exact path='/add' component={Add} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Route exact path='/' component={AllFriends} />
+            {/* <Route exact path='/contacts' component={Contacts} /> */}
+            <Route exact path='/search' component={Search} />
+            {/* <Route exact path='/sort' component={Sort} /> */}
+            {/* <Route exact path='/all' component={AllFriends} /> */}
+            <Route exact path='/add' component={Add} />
+          </Suspense>
         </Router>
   );
 }
