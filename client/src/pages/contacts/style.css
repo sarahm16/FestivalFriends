@@ -18,6 +18,12 @@
     position: relative;
 }
 
+/* .contacts-bg {
+    height: 600px;
+    background-color: rgba(211, 211, 211, 0.493);
+    z-index: -1;
+} */
+
 .contacts {
     z-index: 1;
     position: absolute;

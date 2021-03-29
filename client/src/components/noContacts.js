@@ -2,7 +2,7 @@ import React from 'react';
 
 function NoContacts() {
     return(
-        <div className='no-contacts'>No Contacts Yet!</div>
+        <h3 className='no-contacts'>No Contacts Yet!</h3>
     )
 }
 

@@ -11,6 +11,16 @@
     /* background-color: rgba(211, 211, 211, 0.493); */
 }
 
+.no-contacts {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 30px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid orange;
+}
+
 .delete, .edit {
     border: none;
     display: inline;

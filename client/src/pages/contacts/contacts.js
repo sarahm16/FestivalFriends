@@ -51,25 +51,11 @@ class Contacts extends Component {
     render() {
         return(
             <div>
-                {this.state.noContacts && <NoContacts />}
+                {/* <div className='contacts-bg'>
+                </div> */}
+                {(this.state.noContacts && !this.props.showSearch) && <NoContacts />}
                 {this.props.screen && <div className='screen'></div>}
-                <div className={this.props.screen ? 'contacts search-contacts' : 'contacts'}
-                // style={{top: this.props.screen && this.props.search === '' ? '120px' : '64px'}}
-                >
-                    {/* <div className="card">
-                        <div className="card-header" id="headingOne">
-                            <div className='row'>
-                                <div className="col-12 add-contact">
-                                    <button onClick={this.toggle} className="btn btn-link" data-toggle="collapse" data-target='#collapseOne' aria-expanded="true" aria-controls="collapseOne">
-                                        <i className="fas fa-plus-circle add-icon"></i> Add Friend
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        {this.state.show && <Form edit={false}/>}                       
-                    </div> */}
-
+                <div className={this.props.screen ? 'contacts search-contacts' : 'contacts'}>
                     {/* create contact component for each object in array */}
                     {this.state.contacts.map(contact => {
                         return <Contact
