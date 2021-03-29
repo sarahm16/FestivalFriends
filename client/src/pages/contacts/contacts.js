@@ -56,7 +56,7 @@ class Contacts extends Component {
         return(
             <div>
                 {this.props.screen && <div className='screen'></div>}
-                <div className='contacts'
+                <div className={this.props.screen ? 'contacts search-contacts' : 'contacts'}
                 // style={{top: this.props.screen && this.props.search === '' ? '120px' : '64px'}}
                 >
                     {/* <div className="card">

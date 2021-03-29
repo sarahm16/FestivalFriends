@@ -21,9 +21,12 @@
 .contacts {
     z-index: 1;
     position: absolute;
-    top: 120px;
     left: 0px;
     width: 100%;
+}
+
+.search-contacts {
+    top: 120px;
 }
 
 /* .contacts {
