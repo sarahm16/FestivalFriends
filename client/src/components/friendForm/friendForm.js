@@ -119,7 +119,7 @@ class Form extends Component {
         let addText;
         this.props.edit ?  addText='Save Changes' : addText='Add Friend';
         return(
-        <div aria-labelledby="headingOne">
+        <div aria-labelledby="headingOne" className='form-container'>
             <div className="card-body form-bg">
                 <form>
                     <div className="form-group">

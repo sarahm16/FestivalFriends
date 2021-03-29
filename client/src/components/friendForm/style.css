@@ -6,6 +6,11 @@
     margin: 0 auto;
 } */
 
+.form-container {
+    width: 360px;
+    margin: 0 auto;
+}
+
 .form-bg {
     background-color: rgba(211, 211, 211, 0.493);
     height: 100%;

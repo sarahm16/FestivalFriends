@@ -5,6 +5,12 @@
     padding: 0px !important;
 }
 
+.contact-container {
+    width: 360px;
+    margin: 0 auto;
+    /* background-color: rgba(211, 211, 211, 0.493); */
+}
+
 .delete, .edit {
     border: none;
     display: inline;

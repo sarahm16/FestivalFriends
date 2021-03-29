@@ -64,7 +64,7 @@ class Contact extends Component {
         console.log(this.state.name)
         return(
             <div>
-                <div className="card">
+                <div className="card contact-container">
                     <div className="card-header" id="headingOne">
                         <div className='row'>
                             <div className="col-8 text-left">

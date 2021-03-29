@@ -2,3 +2,8 @@
   text-align: center;
   padding-bottom: 30px;
 }
+
+.app-container {
+  width: 360px;
+  margin: 0 auto;
+}
