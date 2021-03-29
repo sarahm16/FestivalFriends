@@ -11,14 +11,22 @@
     /* background-color: rgba(211, 211, 211, 0.493); */
 }
 
+.no-contacts-container {
+    height: 700px;
+    z-index: -10;
+    background-color: rgba(211, 211, 211, 0.493);
+    padding-top: 40px;
+}
+
 .no-contacts {
     width: 70%;
     margin: 0 auto;
-    margin-top: 40px;
-    padding: 30px;
+    padding: 30px 20px 30px 20px;
     text-align: center;
     background-color: white;
-    border: 1px solid orange;
+    box-shadow: 0px 0px 10px 1px orange;
+    color: rgb(46, 46, 46);
+    z-index: 10;
 }
 
 .delete, .edit {
