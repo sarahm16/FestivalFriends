@@ -26,7 +26,13 @@ class Form extends Component {
         }
     }
 
-    componentDidMount() {
+    componentDidMount() { 
+        let nums = [0,1,2,3,4];
+        let newNums = nums.map(num => {
+            return num + 1
+        })
+        console.log(newNums)
+        console.log(!newNums.length)
         if(this.props.edit) {
             const { festival, date, phone, notes, name, image } = this.props.placeholders;
             this.setState({
