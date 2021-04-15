@@ -14,10 +14,7 @@ function App() {
             <div className='app-container'>
             <Route exact path='/' component={Add} />
             <Route exact path='/allFriends' component={AllFriends} />
-            {/* <Route exact path='/contacts' component={Contacts} /> */}
             <Route exact path='/search' component={Search} />
-            {/* <Route exact path='/sort' component={Sort} /> */}
-            {/* <Route exact path='/all' component={AllFriends} /> */}
             <Route exact path='/add' component={Add} />
             </div>
           </Suspense>
