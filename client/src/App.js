@@ -2,12 +2,9 @@ import React, { Suspense, lazy } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-//import Search from './pages/search/search';
-//import AllFriends from './pages/all/allFriends';
 import Add from './pages/add/add';
 
 const AllFriends = lazy(() => import('./pages/all/allFriends'));
-//const Add = lazy(() => import('./pages/add/add'));
 const Search = lazy(() => import('./pages/search/search'))
 
 function App() {
