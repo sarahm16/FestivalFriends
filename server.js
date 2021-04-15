@@ -42,16 +42,8 @@ app.use(express.static(__dirname));
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// const buildPath = path.join(__dirname, '..', 'client/build');
-// app.use(
-//   '/',
-//   expressStaticGzip(buildPath, {
-//     enableBrotli: true,
-//     orderPreference: ['br', 'gz']
-//   })
-// );
-
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
